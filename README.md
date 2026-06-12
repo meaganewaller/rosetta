@@ -22,8 +22,8 @@ Building in phases — see the [roadmap](ROADMAP.md) for detail.
   [GitHub Copilot](docs/adapters/copilot.md) — each golden-file tested.
 - 🚧 **Phase 3 — Catalog buildout.** Populating the [taxonomy](docs/categories.md) with depth,
   starting by dogfooding — an authoring toolkit (`plugin-scaffold`, `skill-writer`,
-  `catalog-curator`) we use to build the rest, then the Languages family (`python-idioms`,
-  `typescript-idioms`, `ruby-idioms`). **11 plugins across 10 categories** so far.
+  `catalog-curator`), then the Languages family and the AI & ML cluster. **14 plugins across
+  10+ categories** so far ([coverage](docs/coverage.md)).
 - ⏳ **Phases 4–5** — web registry/site, governance.
 
 ## Documentation
