@@ -95,16 +95,23 @@ made operational.
   and at what fidelity. The matrix is data, surfaced in the catalog so consumers see
   per-harness support *before* installing.
 
-Four adapters are built, each verified against its harness's live docs and covered by
-golden-file tests: **[Cursor](adapters/cursor.md)**, **[Codex CLI](adapters/codex.md)**,
-**[OpenCode](adapters/opencode.md)**, and **[Gemini CLI](adapters/gemini.md)**. They map the
-same plugin differently — Cursor keeps slash commands but loses the subagent concept; Codex
-keeps subagents but has no project slash command; OpenCode keeps everything; Gemini keeps
-everything but in TOML — which is exactly what the fidelity report exists to communicate.
+All five target adapters are built, each verified against its harness's live docs and covered
+by golden-file tests: **[Cursor](adapters/cursor.md)**, **[Codex CLI](adapters/codex.md)**,
+**[OpenCode](adapters/opencode.md)**, **[Gemini CLI](adapters/gemini.md)**, and
+**[GitHub Copilot](adapters/copilot.md)**. They map the same plugin differently — Cursor keeps
+slash commands but loses the subagent concept; Codex keeps subagents but has no project slash
+command; OpenCode keeps everything; Gemini keeps everything but in TOML; Copilot keeps
+everything across `.github/*` files — which is exactly what the fidelity report communicates.
+The contract they implement lives in `src/contract.ts`.
 
-A useful finding from building them: **Codex, OpenCode, and Gemini have all converged on
-Claude Code's `SKILL.md` format**, so skills map NATIVE across the board. The divergence is
-in commands and agents, not knowledge. The contract they implement lives in `src/contract.ts`.
+Two findings fell out of building all five:
+
+1. **`SKILL.md` is now a cross-harness open standard.** Codex, OpenCode, Gemini, *and* Copilot
+   have all adopted Claude Code's skill format, so skills map NATIVE everywhere. The ecosystem's
+   divergence is in commands and agents, not in knowledge.
+2. **No current target needs the `INLINED` rung.** Because every harness has a skills primitive,
+   skills never have to be folded into an always-on context file. `INLINED` stays in the
+   contract for a future harness that lacks one — but as of June 2026, none of the five do.
 
 ## Harness tiers (proposed)
 

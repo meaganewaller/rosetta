@@ -15,12 +15,13 @@ Building in phases — see the [roadmap](ROADMAP.md) for detail.
 - ✅ **Phase 1 — Canonical authoring & Git marketplace.** A 5-plugin seed catalog, a CI-gated
   [validator](scripts/validate.ts), and the `rosetta` marketplace — verified by a live
   `/plugin install` in Claude Code.
-- 🚧 **Phase 2 — Adapter layer & CLI.** The `rosetta` CLI translates a canonical plugin into
-  another harness with a per-component fidelity report. Tier-1 & Tier-2 adapters done:
+- ✅ **Phase 2 — Adapter layer & CLI.** The `rosetta` CLI translates a canonical plugin into
+  **all five target harnesses** with a per-component fidelity report:
   [Cursor](docs/adapters/cursor.md), [Codex CLI](docs/adapters/codex.md),
-  [OpenCode](docs/adapters/opencode.md), and [Gemini CLI](docs/adapters/gemini.md). GitHub
-  Copilot (Tier-3) is next.
-- ⏳ **Phases 3–5** — catalog buildout, web registry/site, governance.
+  [OpenCode](docs/adapters/opencode.md), [Gemini CLI](docs/adapters/gemini.md), and
+  [GitHub Copilot](docs/adapters/copilot.md) — each golden-file tested.
+- 🚧 **Phase 3 — Catalog buildout.** Populate the [taxonomy](docs/categories.md) with depth.
+- ⏳ **Phases 4–5** — web registry/site, governance.
 
 ## Documentation
 

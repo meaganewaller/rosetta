@@ -70,35 +70,35 @@ the plugin's command, skill, and agent all loaded.)*
 
 ---
 
-## Phase 2 — Adapter layer & CLI installer *(in progress)*
+## Phase 2 — Adapter layer & CLI installer *(done)*
 
-Make "any harness" real. This is the technical heart of the project. **Cursor slice landed**
-end-to-end (contract + adapter + CLI + golden tests); the remaining harnesses follow the same
-shape.
+Make "any harness" real. This is the technical heart of the project — and it's built: one
+canonical plugin now translates to **all five target harnesses**, each with an accurate
+fidelity report and golden-file tests.
 
 - [x] Define the **adapter contract** ([`src/contract.ts`](src/contract.ts)): input = canonical
       plugin; output = per-harness files + a translation report
       (`NATIVE | DEMOTED | INLINED | SKIPPED`).
-- [~] Build the **capability matrix** — emerges from each adapter's declared mapping + report.
-      Cursor is documented in [`docs/adapters/cursor.md`](docs/adapters/cursor.md); the rest fill in
-      as adapters land.
-- [~] **Validate the [component mapping](docs/architecture.md#components-and-how-they-translate)**
-      against each harness's *current* behavior. **Cursor, Codex CLI, OpenCode & Gemini CLI:
-      done** (verified vs. live docs, June 2026). Tier-3 pending.
-- [x] Tier-1 adapters: **Cursor** ✅ and **Codex CLI** ✅ — both with golden-file tests.
+- [x] Build the **capability matrix** — emerges from each adapter's declared mapping + report,
+      documented per harness in [`docs/adapters/`](docs/adapters/).
+- [x] **Validate the [component mapping](docs/architecture.md#components-and-how-they-translate)**
+      against each harness's *current* behavior — **all five verified vs. live docs, June 2026.**
+- [x] Tier-1 adapters: **Cursor** ✅ and **Codex CLI** ✅ — with golden-file tests.
       ([cursor.md](docs/adapters/cursor.md), [codex.md](docs/adapters/codex.md))
-- [x] Tier-2 adapters: **OpenCode** ✅ and **Gemini CLI** ✅ — both with golden-file tests.
+- [x] Tier-2 adapters: **OpenCode** ✅ and **Gemini CLI** ✅ — with golden-file tests.
       ([opencode.md](docs/adapters/opencode.md), [gemini.md](docs/adapters/gemini.md))
-- [ ] Tier-3 adapter: **GitHub Copilot** (expect the most degradation).
+- [x] Tier-3 adapter: **GitHub Copilot** ✅ — with golden-file tests.
+      ([copilot.md](docs/adapters/copilot.md))
 - [x] The **CLI** ([`src/cli.ts`](src/cli.ts)): `inspect` (dry run) + `add` (write), harness
       detection, `--harness` override, `--into`, and the per-component report.
 - [~] CLI distribution: **decided** — run via Node / `mise run cli` for now; packaging
-      (npm / binary / mise) deferred until the adapters settle.
+      (npm / binary / mise) is a carried-forward [open question](#open-questions), not a blocker.
 
 **Exit criterion:** a single canonical plugin installs into all tier-1 harnesses via the
 CLI, each install prints an accurate translation report, and adapter output is covered by
-golden-file tests. *(Met for Tier-1: `changelog` translates to both Cursor and Codex CLI
-with accurate reports and golden tests. Tier-2/3 harnesses remain.)*
+golden-file tests. *(Met and exceeded: `changelog` translates to all five harnesses — Cursor,
+Codex CLI, OpenCode, Gemini CLI, and GitHub Copilot — each with an accurate report and
+golden-file tests.)*
 
 ---
 

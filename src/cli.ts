@@ -14,6 +14,7 @@ import { cursorAdapter } from "./adapters/cursor.ts";
 import { codexAdapter } from "./adapters/codex.ts";
 import { opencodeAdapter } from "./adapters/opencode.ts";
 import { geminiAdapter } from "./adapters/gemini.ts";
+import { copilotAdapter } from "./adapters/copilot.ts";
 import type { Adapter, AdapterResult } from "./contract.ts";
 
 const ADAPTERS: Record<string, Adapter> = {
@@ -21,6 +22,7 @@ const ADAPTERS: Record<string, Adapter> = {
   codex: codexAdapter,
   opencode: opencodeAdapter,
   gemini: geminiAdapter,
+  copilot: copilotAdapter,
 };
 const ROOT = process.cwd();
 
@@ -43,6 +45,7 @@ function detectHarness(into: string): string | null {
   if (existsSync(join(into, ".codex"))) return "codex";
   if (existsSync(join(into, ".cursor"))) return "cursor";
   if (existsSync(join(into, ".gemini"))) return "gemini";
+  if (existsSync(join(into, ".github/copilot-instructions.md"))) return "copilot";
   return null;
 }
 
