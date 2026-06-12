@@ -27,19 +27,19 @@ The zero-infra channel. Claude Code can add a marketplace directly from a Git re
 
 ```
 /plugin marketplace add meaganewaller/agents
-/plugin install changelog@agents
+/plugin install changelog@rosetta
 ```
 
 **`marketplace.json` (shape):**
 
 ```json
 {
-  "name": "agents",
+  "name": "rosetta",
   "owner": { "name": "Meagan Waller" },
   "plugins": [
     {
       "name": "changelog",
-      "source": "./examples/changelog",
+      "source": "./plugins/changelog",
       "description": "Generate and maintain a Keep a Changelog–style CHANGELOG.md.",
       "category": "Documentation",
       "version": "0.1.0"

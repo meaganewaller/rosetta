@@ -1,0 +1,24 @@
+{
+  "name": "rosetta",
+  "owner": { "name": "Meagan Waller" },
+  "metadata": {
+    "description": "Author an agentic capability once in Claude Code's plugin format and ship it to every major harness.",
+    "homepage": "https://github.com/meaganewaller/agents"
+  },
+  "plugins": [
+    {
+      "name": "changelog",
+      "source": "./plugins/changelog",
+      "description": "Generate and maintain a Keep a Changelog–style CHANGELOG.md from git history.",
+      "category": "Documentation",
+      "version": "0.1.0"
+    },
+    {
+      "name": "pr-description",
+      "source": "./plugins/pr-description",
+      "description": "Draft a clear, reviewer-friendly pull request description from the staged diff and commit history.",
+      "category": "Workflows",
+      "version": "0.1.0"
+    }
+  ]
+}

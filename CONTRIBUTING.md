@@ -5,14 +5,14 @@ plugin once in the canonical format, and the project handles getting it onto eve
 harness.** Your job is to write a good, well-scoped plugin and package it to spec. The
 [adapter layer](docs/architecture.md#the-adapter-layer) does the rest.
 
-> Some phases below (the validator, the CLI) are still being built — see the
-> [roadmap](ROADMAP.md). Until the validator lands, the [plugin spec](docs/plugin-spec.md)
-> is the checklist; treat it as the source of truth.
+> The validator is live (Phase 1); the CLI and adapters are still being built — see the
+> [roadmap](ROADMAP.md). The [plugin spec](docs/plugin-spec.md) is the human checklist; the
+> validator is its executable form.
 
 ## Before you start
 
 1. Read the [plugin spec](docs/plugin-spec.md) — the format you'll author in.
-2. Skim the [example plugin](examples/changelog/) — the spec, fully worked.
+2. Skim the [reference plugin](plugins/changelog/) — the spec, fully worked.
 3. Pick a [category](docs/categories.md). If nothing fits, propose a new one (see below).
 
 ## Authoring a plugin
@@ -54,17 +54,33 @@ don't have to handle that — the adapters do — but you can make it land bette
 - If a capability *requires* a hook to be safe/correct, document that prominently so the
   translation report's `SKIPPED` line makes sense to a consumer.
 
+## Validate locally
+
+The catalog ships a validator that encodes the spec. Run it before you push — CI runs the
+same check:
+
+```bash
+mise run validate        # or: node scripts/validate.ts
+```
+
+It checks every registered plugin: manifest fields, component frontmatter, README presence,
+no hard-coded absolute paths, and that the `category` matches the canonical list in
+[`catalog/categories.json`](catalog/categories.json). **Errors fail; warnings don't.** Fix
+all errors and address warnings where they apply.
+
+Requires Node ≥ 22.18 (pinned to 24 via [`mise.toml`](mise.toml)) — the validator runs as
+native TypeScript, so there's nothing to build. `mise run typecheck` type-checks the tooling
+(needs `npm install` first).
+
 ## Submitting
 
 1. Fork and branch.
-2. Add your plugin under the catalog's plugin directory (layout finalized in
-   [Phase 1](ROADMAP.md#phase-1--canonical-authoring--git-marketplace)). For now, model it
-   on [`examples/changelog/`](examples/changelog/).
-3. Register it in `.claude-plugin/marketplace.json` (name, source path, description,
-   category, version).
-4. Run the validator locally once it exists; until then, self-check against the
-   [spec](docs/plugin-spec.md).
-5. Open a PR. CI runs the validator (Phase 1+). A maintainer reviews for the quality bar
+2. Add your plugin under [`plugins/<name>/`](plugins/), modeled on
+   [`plugins/changelog/`](plugins/changelog/).
+3. Register it in [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json) —
+   `name`, `source`, `description`, `category`, `version`.
+4. Run `mise run validate` and fix every error.
+5. Open a PR. CI runs the validator + type-check. A maintainer reviews for the quality bar
    above and, for plugins with executable surface, a security pass (Phase 5).
 
 ### Commits & PRs

@@ -1,0 +1,10 @@
+[tools]
+node = "24"
+
+[tasks.validate]
+description = "Validate the catalog against the plugin spec"
+run = "node scripts/validate.ts"
+
+[tasks.typecheck]
+description = "Type-check the tooling (requires `npm install`)"
+run = "node_modules/.bin/tsc --noEmit"

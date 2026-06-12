@@ -24,7 +24,7 @@ Start with the [docs index](docs/README.md), or jump in:
 - [Roadmap](ROADMAP.md) — the phased plan.
 - [Contributing](CONTRIBUTING.md) — author and submit a plugin.
 
-See [`examples/changelog/`](examples/changelog/) for a fully-worked example plugin.
+See [`plugins/changelog/`](plugins/changelog/) for a fully-worked reference plugin.
 
 ## License
 

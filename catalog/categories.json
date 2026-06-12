@@ -1,0 +1,47 @@
+{
+  "$schema": "./categories.schema.json",
+  "description": "Canonical machine-readable catalog taxonomy. The human-readable companion is docs/categories.md. A plugin's `category` in .claude-plugin/marketplace.json must match one `name` below. Adding a category is a deliberate PR that edits both files.",
+  "categories": [
+    { "name": "Development", "slug": "development", "family": "Core engineering" },
+    { "name": "Documentation", "slug": "documentation", "family": "Core engineering" },
+    { "name": "Workflows", "slug": "workflows", "family": "Core engineering" },
+    { "name": "Testing", "slug": "testing", "family": "Core engineering" },
+    { "name": "Quality", "slug": "quality", "family": "Core engineering" },
+    { "name": "Utilities", "slug": "utilities", "family": "Core engineering" },
+
+    { "name": "AI & ML", "slug": "ai-ml", "family": "Data & intelligence" },
+    { "name": "Memory", "slug": "memory", "family": "Data & intelligence" },
+    { "name": "Data", "slug": "data", "family": "Data & intelligence" },
+    { "name": "Database", "slug": "database", "family": "Data & intelligence" },
+
+    { "name": "Operations", "slug": "operations", "family": "Platform & operations" },
+    { "name": "Performance", "slug": "performance", "family": "Platform & operations" },
+    { "name": "Infrastructure", "slug": "infrastructure", "family": "Platform & operations" },
+    { "name": "Security", "slug": "security", "family": "Platform & operations" },
+    { "name": "Governance", "slug": "governance", "family": "Platform & operations" },
+    { "name": "Modernization", "slug": "modernization", "family": "Platform & operations" },
+    { "name": "API", "slug": "api", "family": "Platform & operations" },
+
+    { "name": "Marketing", "slug": "marketing", "family": "Domain & business" },
+    { "name": "Business", "slug": "business", "family": "Domain & business" },
+    { "name": "Finance", "slug": "finance", "family": "Domain & business" },
+    { "name": "Payments", "slug": "payments", "family": "Domain & business" },
+    { "name": "Gaming", "slug": "gaming", "family": "Domain & business" },
+    { "name": "Accessibility", "slug": "accessibility", "family": "Domain & business" },
+    { "name": "Creative / Design", "slug": "creative-design", "family": "Domain & business" },
+
+    { "name": "Python", "slug": "python", "family": "Languages" },
+    { "name": "Ruby", "slug": "ruby", "family": "Languages" },
+    { "name": "JavaScript", "slug": "javascript", "family": "Languages" },
+    { "name": "TypeScript", "slug": "typescript", "family": "Languages" },
+    { "name": "Systems programming", "slug": "systems-programming", "family": "Languages" },
+    { "name": "Web scripting", "slug": "web-scripting", "family": "Languages" },
+    { "name": "Bash / Shell", "slug": "bash-shell", "family": "Languages" },
+    { "name": "JVM", "slug": "jvm", "family": "Languages" },
+    { "name": "PHP", "slug": "php", "family": "Languages" },
+    { "name": "C# / .NET", "slug": "csharp-dotnet", "family": "Languages" },
+    { "name": "Swift", "slug": "swift", "family": "Languages" },
+    { "name": "Elixir", "slug": "elixir", "family": "Languages" },
+    { "name": "SQL", "slug": "sql", "family": "Languages" }
+  ]
+}

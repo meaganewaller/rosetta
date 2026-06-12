@@ -17,10 +17,13 @@ These were settled at kickoff and frame everything below:
 | **Distribution** | All three channels: Git marketplace + CLI installer/adapter + web registry/site. |
 | **First doc pass** | Roadmap-first lean set (this document set). |
 | **Target harnesses** | Claude Code (source) + Codex CLI, Cursor, OpenCode, Gemini CLI, GitHub Copilot. |
+| **Marketplace name** | `rosetta` — the `name` in `marketplace.json`; installs read `plugin@rosetta`. Product/site branding deferred. |
+| **Category metadata** | Catalog-side, in `marketplace.json` entries; validated against `catalog/categories.json`. |
+| **Tooling stack** | Node / TypeScript, run via Node's native type stripping (no build step). |
 
 ---
 
-## Phase 0 — Foundations *(in progress)*
+## Phase 0 — Foundations *(done)*
 
 Get the direction, the spec, and the contributor on-ramp written down before building.
 
@@ -30,29 +33,37 @@ Get the direction, the spec, and the contributor on-ramp written down before bui
 - [x] Category taxonomy — [`docs/categories.md`](docs/categories.md)
 - [x] Distribution model (3 channels) — [`docs/distribution.md`](docs/distribution.md)
 - [x] Contributing guide — [`CONTRIBUTING.md`](CONTRIBUTING.md)
-- [x] One fully-worked example plugin — [`examples/changelog/`](examples/changelog/)
+- [x] One fully-worked example plugin — [`plugins/changelog/`](plugins/changelog/)
 - [x] This roadmap
 
 **Exit criterion:** a new contributor can read the docs and understand what to build, how to
-package it, and where it's headed — without asking. ✅ (pending review of this set)
+package it, and where it's headed — without asking. ✅
 
 ---
 
-## Phase 1 — Canonical authoring & Git marketplace
+## Phase 1 — Canonical authoring & Git marketplace *(in progress)*
 
 Make the catalog real and installable on Claude Code, with a quality gate.
 
-- [ ] Finalize repo layout for the catalog (where plugins live, how categories are recorded).
-- [ ] Write `.claude-plugin/marketplace.json` and wire the example plugin into it.
-- [ ] **Validator**: lint a plugin against [the spec](docs/plugin-spec.md) — manifest fields,
-      component frontmatter, no absolute paths, least-privilege tools, README present,
-      category valid. (Reuse/extend existing `meta:validate-plugin` tooling where possible.)
-- [ ] **CI**: run the validator on every PR; block merges that fail.
-- [ ] Seed catalog: 3–5 reference plugins across distinct categories, each validated and
-      installable on Claude Code via the Git marketplace.
+- [x] Finalize repo layout: catalog plugins live in `plugins/<name>/`; the canonical
+      taxonomy is `catalog/categories.json`; category is recorded catalog-side in
+      `marketplace.json`.
+- [x] Write [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json) and wire
+      the plugins into it (`changelog`, `pr-description`).
+- [x] **Validator** ([`scripts/validate.ts`](scripts/validate.ts)): manifest fields,
+      component frontmatter, no absolute paths, README present, category valid against
+      `catalog/categories.json`, name/version cross-checks, duplicate + unregistered-dir
+      detection. Warns on missing `allowed-tools` / `keywords`. Runs as native TypeScript,
+      no build step. (The interactive `meta:validate-plugin` skill remains useful for
+      deeper one-off audits.)
+- [x] **CI** ([`.github/workflows/validate.yml`](.github/workflows/validate.yml)): runs the
+      validator + a type-check on every push and PR.
+- [ ] Seed catalog: **2 of 3–5** done (`changelog` → Documentation, `pr-description` →
+      Workflows). Add ~3 more across distinct categories.
 
 **Exit criterion:** `/plugin marketplace add` + `/plugin install` works for seed plugins on
-Claude Code, and no invalid plugin can merge.
+Claude Code, and no invalid plugin can merge. *(Gate is live; remaining work is breadth of
+seed plugins.)*
 
 ---
 
@@ -138,10 +149,15 @@ and from who it claims to be?" for every plugin in the catalog.
 
 ## Open questions
 
-- **Product name.** The repo is `meaganewaller/agents`; the marketplace itself is unnamed.
+- **Product / site branding.** The marketplace `name` is `rosetta`; a product name and
+  visual brand for the Phase 4 site are still open. (Phase 4)
 - **CLI distribution.** npm package, standalone binary, or `mise`-installable? (Phase 2)
-- **Category metadata location.** A `categories` field in `plugin.json` vs. catalog-side
-  metadata in `marketplace.json`? (Phase 1)
 - **Hosted site stack.** Static generator + host choice for the registry. (Phase 4)
 - **Security review depth.** Manual review, automated scanning, or both — and what's
   blocking vs. advisory? (Phase 5)
+
+### Resolved
+
+- ~~**Category metadata location.**~~ → Catalog-side in `marketplace.json` entries,
+  validated against `catalog/categories.json`. (Phase 1)
+- ~~**Marketplace name.**~~ → `rosetta`. (Phase 1)

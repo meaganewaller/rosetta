@@ -1,7 +1,7 @@
 # changelog
 
-> Example plugin — a reference implementation of the [plugin spec](../../docs/plugin-spec.md),
-> used in the docs to show all the moving parts in one place.
+> Reference plugin — a registered catalog entry that also serves as the worked example for
+> the [plugin spec](../../docs/plugin-spec.md), showing all the moving parts in one place.
 
 Generate and maintain a [Keep a Changelog](https://keepachangelog.com/)–style `CHANGELOG.md`
 from your git history, and turn tag ranges into polished release notes.
@@ -35,11 +35,9 @@ real install prints a translation report showing what actually landed.
 
 ## Try it (Claude Code)
 
-Once the catalog's `marketplace.json` registers it (Phase 1):
-
 ```
 /plugin marketplace add meaganewaller/agents
-/plugin install changelog@agents
+/plugin install changelog@rosetta
 /changelog 1.2.0
 ```
 

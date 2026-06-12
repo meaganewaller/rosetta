@@ -38,7 +38,7 @@ presence on disk is the registration.
   "description": "Generate and maintain a Keep a Changelog–style CHANGELOG.md from git history.",
   "version": "0.1.0",
   "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/agents/tree/main/examples/changelog",
+  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/changelog",
   "license": "MIT",
   "keywords": ["changelog", "release-notes", "documentation"]
 }
@@ -57,9 +57,12 @@ presence on disk is the registration.
 > "(catalog)" = required by *this marketplace's* contribution rules even if Claude Code
 > treats it as optional. The [validator](../CONTRIBUTING.md) enforces these.
 
-Every catalog plugin also declares **at least one category** from the
-[taxonomy](categories.md). The mechanism (a `categories` field vs. catalog-side metadata)
-is finalized in [Phase 1](../ROADMAP.md#phase-1--canonical-authoring--git-marketplace).
+Every catalog plugin also declares **a category** from the [taxonomy](categories.md).
+Category is **catalog-side metadata** — it lives in the plugin's entry in
+`.claude-plugin/marketplace.json`, not in `plugin.json` (decided in
+[Phase 1](../ROADMAP.md#phase-1--canonical-authoring--git-marketplace)). This keeps
+`plugin.json` strictly Claude-Code-spec-compliant; the validator checks the category against
+the canonical list in [`catalog/categories.json`](../catalog/categories.json).
 
 ## Components
 
@@ -163,4 +166,4 @@ To keep the catalog adapter-friendly and reviewable:
 
 - [Architecture](architecture.md) — how this format becomes six harness packages.
 - [Contributing](../CONTRIBUTING.md) — the submission + validation flow.
-- [Example plugin](../examples/changelog/) — this spec, fully worked.
+- [Reference plugin](../plugins/changelog/) — this spec, fully worked.

@@ -22,7 +22,7 @@ to six harnesses.
 | Understand what this is and why | [Vision](vision.md) |
 | Understand how it works under the hood | [Architecture](architecture.md) |
 | Build a plugin | [Plugin spec](plugin-spec.md) + [Contributing](../CONTRIBUTING.md) |
-| See a worked example | [`examples/changelog/`](../examples/changelog/) |
+| See a worked example | [`plugins/changelog/`](../plugins/changelog/) |
 | Know which categories exist | [Categories](categories.md) |
 | Install a plugin into my harness | [Distribution](distribution.md) |
 | See what's planned | [Roadmap](../ROADMAP.md) |
