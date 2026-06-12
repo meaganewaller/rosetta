@@ -1,0 +1,147 @@
+# Roadmap
+
+The phased plan to get from an empty repo to a comprehensive, multi-harness agentic plugin
+marketplace. Read the [vision](docs/vision.md) for the *why* and [architecture](docs/architecture.md)
+for the *how*; this is the *when* and *in what order*.
+
+Phases are sequential in dependency but the work *within* later phases parallelizes. Each
+phase has an **exit criterion** — the concrete thing that must be true to call it done.
+
+## Decisions locked
+
+These were settled at kickoff and frame everything below:
+
+| Decision | Choice |
+|----------|--------|
+| **Source of truth** | Claude Code plugin format is canonical; all other harnesses are generated targets. |
+| **Distribution** | All three channels: Git marketplace + CLI installer/adapter + web registry/site. |
+| **First doc pass** | Roadmap-first lean set (this document set). |
+| **Target harnesses** | Claude Code (source) + Codex CLI, Cursor, OpenCode, Gemini CLI, GitHub Copilot. |
+
+---
+
+## Phase 0 — Foundations *(in progress)*
+
+Get the direction, the spec, and the contributor on-ramp written down before building.
+
+- [x] Vision, principles, audience — [`docs/vision.md`](docs/vision.md)
+- [x] Architecture: single-source → multi-harness + component mapping — [`docs/architecture.md`](docs/architecture.md)
+- [x] Canonical plugin spec — [`docs/plugin-spec.md`](docs/plugin-spec.md)
+- [x] Category taxonomy — [`docs/categories.md`](docs/categories.md)
+- [x] Distribution model (3 channels) — [`docs/distribution.md`](docs/distribution.md)
+- [x] Contributing guide — [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- [x] One fully-worked example plugin — [`examples/changelog/`](examples/changelog/)
+- [x] This roadmap
+
+**Exit criterion:** a new contributor can read the docs and understand what to build, how to
+package it, and where it's headed — without asking. ✅ (pending review of this set)
+
+---
+
+## Phase 1 — Canonical authoring & Git marketplace
+
+Make the catalog real and installable on Claude Code, with a quality gate.
+
+- [ ] Finalize repo layout for the catalog (where plugins live, how categories are recorded).
+- [ ] Write `.claude-plugin/marketplace.json` and wire the example plugin into it.
+- [ ] **Validator**: lint a plugin against [the spec](docs/plugin-spec.md) — manifest fields,
+      component frontmatter, no absolute paths, least-privilege tools, README present,
+      category valid. (Reuse/extend existing `meta:validate-plugin` tooling where possible.)
+- [ ] **CI**: run the validator on every PR; block merges that fail.
+- [ ] Seed catalog: 3–5 reference plugins across distinct categories, each validated and
+      installable on Claude Code via the Git marketplace.
+
+**Exit criterion:** `/plugin marketplace add` + `/plugin install` works for seed plugins on
+Claude Code, and no invalid plugin can merge.
+
+---
+
+## Phase 2 — Adapter layer & CLI installer
+
+Make "any harness" real. This is the technical heart of the project.
+
+- [ ] Define the **adapter contract**: input = canonical plugin; output = per-harness files +
+      a translation report (`NATIVE | DEMOTED | INLINED | SKIPPED`).
+- [ ] Build the **capability matrix** as data (per-harness, per-component fidelity).
+- [ ] **Validate the [component mapping](docs/architecture.md#components-and-how-they-translate)**
+      against each harness's *current* behavior — this table is design intent until proven.
+- [ ] Tier-1 adapters: **Codex CLI**, **Cursor**. Golden-file tests for each.
+- [ ] Tier-2 adapters: **OpenCode**, **Gemini CLI**.
+- [ ] Tier-3 adapter: **GitHub Copilot** (expect the most degradation).
+- [ ] The **CLI**: `add`, `inspect`, harness detection, `--harness` override, report output.
+- [ ] Decide + implement CLI distribution (npm / single binary / `mise`-installable).
+
+**Exit criterion:** a single canonical plugin installs into all tier-1 harnesses via the
+CLI, each install prints an accurate translation report, and adapter output is covered by
+golden-file tests.
+
+---
+
+## Phase 3 — Catalog buildout
+
+Earn "comprehensive." Systematically populate the [taxonomy](docs/categories.md).
+
+- [ ] Per-category **quality bar + curation checklist** (what makes a category "covered").
+- [ ] Prioritize categories (likely: Core engineering + top Languages first; long-tail
+      domains as demand appears).
+- [ ] Author/curate plugins per category; each passes the validator and has adapter coverage.
+- [ ] Track coverage publicly (a coverage matrix: category × harness fidelity).
+- [ ] Establish a cadence for accepting community contributions at scale.
+
+**Exit criterion:** every category family has credible depth, and coverage is tracked
+openly so gaps are visible rather than hidden.
+
+---
+
+## Phase 4 — Web registry & discovery site
+
+Make it findable.
+
+- [ ] Static site generated from `marketplace.json` + plugin metadata (no hand-maintained
+      content — see [distribution](docs/distribution.md#channel-3--web-registry--site)).
+- [ ] Category pages mirroring the taxonomy; full-text + keyword search.
+- [ ] Per-plugin pages: description, version history, **per-harness capability matrix**,
+      copy-paste install commands for each channel.
+- [ ] Hosting + build pipeline; rebuild on catalog changes.
+
+**Exit criterion:** anyone can discover a plugin by category or search and get correct
+install instructions for their specific harness, with fidelity shown up front.
+
+---
+
+## Phase 5 — Governance, versioning & sustainability
+
+Make it trustworthy and durable. A marketplace distributing *executable* capability has to
+take this seriously.
+
+- [ ] **Versioning & deprecation** policy (SemVer enforcement, pinning, sunset process).
+- [ ] **Security review** process: plugins carry executable surface (hooks, `allowed-tools`,
+      MCP servers) — define what review is required before a plugin is listed.
+- [ ] **Provenance**: authorship, signing/attestation, and how trust is shown across all
+      three channels.
+- [ ] **Maintainership**: contribution review SLAs, ownership, CODEOWNERS.
+- [ ] **Compatibility tracking**: detect when a harness's format changes and an adapter
+      needs updating.
+
+**Exit criterion:** there is a written, enforced answer to "is this plugin safe, current,
+and from who it claims to be?" for every plugin in the catalog.
+
+---
+
+## Cross-cutting concerns (all phases)
+
+- **Honesty about loss.** Every adapter and install path surfaces what it couldn't translate.
+- **Determinism.** Adapters are testable, reproducible transforms — never ad-hoc generation.
+- **American English** in all docs, identifiers, and messages.
+- **Coupling isolation.** Claude-Code-format coupling stays in the spec + validator, so
+  upstream format changes touch few places.
+
+## Open questions
+
+- **Product name.** The repo is `meaganewaller/agents`; the marketplace itself is unnamed.
+- **CLI distribution.** npm package, standalone binary, or `mise`-installable? (Phase 2)
+- **Category metadata location.** A `categories` field in `plugin.json` vs. catalog-side
+  metadata in `marketplace.json`? (Phase 1)
+- **Hosted site stack.** Static generator + host choice for the registry. (Phase 4)
+- **Security review depth.** Manual review, automated scanning, or both — and what's
+  blocking vs. advisory? (Phase 5)
