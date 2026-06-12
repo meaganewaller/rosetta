@@ -11,9 +11,10 @@ import { join, dirname } from "node:path";
 import process from "node:process";
 import { loadPlugin } from "./load.ts";
 import { cursorAdapter } from "./adapters/cursor.ts";
+import { codexAdapter } from "./adapters/codex.ts";
 import type { Adapter, AdapterResult } from "./contract.ts";
 
-const ADAPTERS: Record<string, Adapter> = { cursor: cursorAdapter };
+const ADAPTERS: Record<string, Adapter> = { cursor: cursorAdapter, codex: codexAdapter };
 const ROOT = process.cwd();
 
 function resolvePluginDir(nameOrPath: string): string {
@@ -31,6 +32,7 @@ function resolvePluginDir(nameOrPath: string): string {
 }
 
 function detectHarness(into: string): string | null {
+  if (existsSync(join(into, ".codex"))) return "codex";
   if (existsSync(join(into, ".cursor"))) return "cursor";
   return null;
 }
@@ -78,7 +80,14 @@ function main(): void {
   }
 
   const into = flags.into ? join(ROOT, flags.into) : ROOT;
-  const harness = flags.harness || detectHarness(into) || "cursor";
+  const harness = flags.harness || detectHarness(into);
+  if (!harness) {
+    console.error(
+      `cannot determine target harness — pass --harness <${Object.keys(ADAPTERS).join("|")}>`,
+    );
+    process.exitCode = 1;
+    return;
+  }
   const adapter = ADAPTERS[harness];
   if (!adapter) {
     console.error(`no adapter for harness '${harness}' (have: ${Object.keys(ADAPTERS).join(", ")})`);

@@ -95,9 +95,11 @@ made operational.
   and at what fidelity. The matrix is data, surfaced in the catalog so consumers see
   per-harness support *before* installing.
 
-The first adapter — **Cursor** — is built and documented in
-[adapters/cursor.md](adapters/cursor.md), with its component mapping verified against the
-live Cursor docs. The contract it implements lives in `src/contract.ts`.
+Two adapters are built, each verified against its harness's live docs and covered by
+golden-file tests: **[Cursor](adapters/cursor.md)** and **[Codex CLI](adapters/codex.md)**.
+They map the same plugin differently — Cursor keeps slash commands but loses the subagent
+concept; Codex keeps subagents but has no project slash command — which is exactly what the
+fidelity report exists to communicate. The contract they implement lives in `src/contract.ts`.
 
 ## Harness tiers (proposed)
 

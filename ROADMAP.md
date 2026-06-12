@@ -83,9 +83,10 @@ shape.
       Cursor is documented in [`docs/adapters/cursor.md`](docs/adapters/cursor.md); the rest fill in
       as adapters land.
 - [~] **Validate the [component mapping](docs/architecture.md#components-and-how-they-translate)**
-      against each harness's *current* behavior. **Cursor: done** (verified vs. cursor.com/docs,
-      June 2026). Others pending.
-- [~] Tier-1 adapters: **Cursor** ✅ (with golden-file tests), **Codex CLI** (next).
+      against each harness's *current* behavior. **Cursor & Codex CLI: done** (verified vs.
+      live docs, June 2026). Tier-2/3 pending.
+- [x] Tier-1 adapters: **Cursor** ✅ and **Codex CLI** ✅ — both with golden-file tests.
+      ([cursor.md](docs/adapters/cursor.md), [codex.md](docs/adapters/codex.md))
 - [ ] Tier-2 adapters: **OpenCode**, **Gemini CLI**.
 - [ ] Tier-3 adapter: **GitHub Copilot** (expect the most degradation).
 - [x] The **CLI** ([`src/cli.ts`](src/cli.ts)): `inspect` (dry run) + `add` (write), harness
@@ -95,7 +96,8 @@ shape.
 
 **Exit criterion:** a single canonical plugin installs into all tier-1 harnesses via the
 CLI, each install prints an accurate translation report, and adapter output is covered by
-golden-file tests. *(Cursor meets this today; Codex CLI is the remaining tier-1 target.)*
+golden-file tests. *(Met for Tier-1: `changelog` translates to both Cursor and Codex CLI
+with accurate reports and golden tests. Tier-2/3 harnesses remain.)*
 
 ---
 
