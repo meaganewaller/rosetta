@@ -30,6 +30,12 @@ See [`plugins/changelog/`](plugins/changelog/) for a fully-worked reference plug
 
 MIT — see [LICENSE](LICENSE).
 
-## Star history
+## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=meaganewaller/agents&type=date&legend=top-left)](https://www.star-history.com/#meaganewaller/agents&type=date&legend=top-left)
+<a href="https://www.star-history.com/?type=date&legend=top-left&repos=meaganewaller%2Fagents">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=meaganewaller/agents&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=meaganewaller/agents&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=meaganewaller/agents&type=date&legend=top-left" />
+ </picture>
+</a>
