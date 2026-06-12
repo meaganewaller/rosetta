@@ -11,19 +11,7 @@
 //   - Hooks:     no Codex equivalent → skipped.
 
 import type { Adapter, AdapterResult, CanonicalPlugin, OutputFile, ReportEntry } from "../contract.ts";
-import { skillMd } from "../util.ts";
-
-/** TOML basic (double-quoted) string. JSON escaping is a valid subset of TOML escaping. */
-function tomlString(s: string): string {
-  return JSON.stringify(s);
-}
-
-/** TOML multiline literal string ('''…'''), which preserves content verbatim (no escapes). */
-function tomlMultiline(s: string): string {
-  const body = s.replace(/\s*$/, "");
-  if (!body.includes("'''")) return `'''\n${body}\n'''`;
-  return tomlString(body.replace(/\r?\n/g, "\\n")); // fall back to a basic string
-}
+import { skillMd, tomlString, tomlMultiline } from "../util.ts";
 
 function mcpToToml(mcp: unknown): { toml: string; usesPluginRoot: boolean } {
   const usesPluginRoot = JSON.stringify(mcp).includes("CLAUDE_PLUGIN_ROOT");

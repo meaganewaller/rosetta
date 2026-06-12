@@ -83,12 +83,12 @@ shape.
       Cursor is documented in [`docs/adapters/cursor.md`](docs/adapters/cursor.md); the rest fill in
       as adapters land.
 - [~] **Validate the [component mapping](docs/architecture.md#components-and-how-they-translate)**
-      against each harness's *current* behavior. **Cursor & Codex CLI: done** (verified vs.
-      live docs, June 2026). Tier-2/3 pending.
+      against each harness's *current* behavior. **Cursor, Codex CLI, OpenCode & Gemini CLI:
+      done** (verified vs. live docs, June 2026). Tier-3 pending.
 - [x] Tier-1 adapters: **Cursor** ✅ and **Codex CLI** ✅ — both with golden-file tests.
       ([cursor.md](docs/adapters/cursor.md), [codex.md](docs/adapters/codex.md))
-- [~] Tier-2 adapters: **OpenCode** ✅ (highest-fidelity yet — with golden tests,
-      [opencode.md](docs/adapters/opencode.md)), **Gemini CLI** (next).
+- [x] Tier-2 adapters: **OpenCode** ✅ and **Gemini CLI** ✅ — both with golden-file tests.
+      ([opencode.md](docs/adapters/opencode.md), [gemini.md](docs/adapters/gemini.md))
 - [ ] Tier-3 adapter: **GitHub Copilot** (expect the most degradation).
 - [x] The **CLI** ([`src/cli.ts`](src/cli.ts)): `inspect` (dry run) + `add` (write), harness
       detection, `--harness` override, `--into`, and the per-component report.

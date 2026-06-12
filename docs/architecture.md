@@ -95,11 +95,16 @@ made operational.
   and at what fidelity. The matrix is data, surfaced in the catalog so consumers see
   per-harness support *before* installing.
 
-Two adapters are built, each verified against its harness's live docs and covered by
-golden-file tests: **[Cursor](adapters/cursor.md)** and **[Codex CLI](adapters/codex.md)**.
-They map the same plugin differently — Cursor keeps slash commands but loses the subagent
-concept; Codex keeps subagents but has no project slash command — which is exactly what the
-fidelity report exists to communicate. The contract they implement lives in `src/contract.ts`.
+Four adapters are built, each verified against its harness's live docs and covered by
+golden-file tests: **[Cursor](adapters/cursor.md)**, **[Codex CLI](adapters/codex.md)**,
+**[OpenCode](adapters/opencode.md)**, and **[Gemini CLI](adapters/gemini.md)**. They map the
+same plugin differently — Cursor keeps slash commands but loses the subagent concept; Codex
+keeps subagents but has no project slash command; OpenCode keeps everything; Gemini keeps
+everything but in TOML — which is exactly what the fidelity report exists to communicate.
+
+A useful finding from building them: **Codex, OpenCode, and Gemini have all converged on
+Claude Code's `SKILL.md` format**, so skills map NATIVE across the board. The divergence is
+in commands and agents, not knowledge. The contract they implement lives in `src/contract.ts`.
 
 ## Harness tiers (proposed)
 
