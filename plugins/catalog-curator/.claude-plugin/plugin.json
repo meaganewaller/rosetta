@@ -1,0 +1,9 @@
+{
+  "name": "catalog-curator",
+  "description": "Validate a plugin against the catalog quality bar and register it in marketplace.json with a valid category.",
+  "version": "0.1.0",
+  "author": { "name": "Meagan Waller" },
+  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/catalog-curator",
+  "license": "MIT",
+  "keywords": ["validation", "quality", "marketplace", "catalog", "review"]
+}

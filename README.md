@@ -20,7 +20,9 @@ Building in phases — see the [roadmap](ROADMAP.md) for detail.
   [Cursor](docs/adapters/cursor.md), [Codex CLI](docs/adapters/codex.md),
   [OpenCode](docs/adapters/opencode.md), [Gemini CLI](docs/adapters/gemini.md), and
   [GitHub Copilot](docs/adapters/copilot.md) — each golden-file tested.
-- 🚧 **Phase 3 — Catalog buildout.** Populate the [taxonomy](docs/categories.md) with depth.
+- 🚧 **Phase 3 — Catalog buildout.** Populating the [taxonomy](docs/categories.md) with depth,
+  starting by dogfooding — an authoring toolkit (`plugin-scaffold`, `skill-writer`,
+  `catalog-curator`) we use to build the rest. **8 plugins across 8 categories** so far.
 - ⏳ **Phases 4–5** — web registry/site, governance.
 
 ## Documentation

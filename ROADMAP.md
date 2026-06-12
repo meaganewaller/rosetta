@@ -102,14 +102,22 @@ golden-file tests.)*
 
 ---
 
-## Phase 3 — Catalog buildout
+## Phase 3 — Catalog buildout *(in progress)*
 
-Earn "comprehensive." Systematically populate the [taxonomy](docs/categories.md).
+Earn "comprehensive." Systematically populate the [taxonomy](docs/categories.md). Started by
+**dogfooding**: building the authoring toolkit first, then using it to write the rest.
 
-- [ ] Per-category **quality bar + curation checklist** (what makes a category "covered").
+- [x] **Dogfooding toolkit** — the plugins we use to build the catalog, each one also
+      exercising the spec + validator + adapters on real content:
+      `plugin-scaffold` (Development), `skill-writer` (Documentation),
+      `catalog-curator` (Quality).
+- [~] Per-category **quality bar + curation checklist** — captured as the
+      `catalog-quality-bar` skill; a standalone checklist doc can follow.
 - [ ] Prioritize categories (likely: Core engineering + top Languages first; long-tail
       domains as demand appears).
-- [ ] Author/curate plugins per category; each passes the validator and has adapter coverage.
+- [~] Author/curate plugins per category; each passes the validator and has adapter coverage.
+      **8 plugins across 8 categories so far** (Documentation, Workflows, Testing, Security,
+      Bash / Shell, Development, Quality).
 - [ ] Track coverage publicly (a coverage matrix: category × harness fidelity).
 - [ ] Establish a cadence for accepting community contributions at scale.
 

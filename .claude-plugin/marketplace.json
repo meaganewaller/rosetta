@@ -40,6 +40,27 @@
       "description": "Lint and harden shell scripts with shellcheck and robust-bash conventions.",
       "category": "Bash / Shell",
       "version": "0.1.0"
+    },
+    {
+      "name": "plugin-scaffold",
+      "source": "./plugins/plugin-scaffold",
+      "description": "Scaffold a spec-compliant catalog plugin — manifest, README, and component stubs in the canonical Claude Code format.",
+      "category": "Development",
+      "version": "0.1.0"
+    },
+    {
+      "name": "skill-writer",
+      "source": "./plugins/skill-writer",
+      "description": "Write trigger-quality SKILL.md files — descriptions that reliably fire and bodies built for progressive disclosure.",
+      "category": "Documentation",
+      "version": "0.1.0"
+    },
+    {
+      "name": "catalog-curator",
+      "source": "./plugins/catalog-curator",
+      "description": "Validate a plugin against the catalog quality bar and register it in marketplace.json with a valid category.",
+      "category": "Quality",
+      "version": "0.1.0"
     }
   ]
 }
