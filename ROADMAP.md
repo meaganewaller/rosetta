@@ -116,8 +116,9 @@ Earn "comprehensive." Systematically populate the [taxonomy](docs/categories.md)
 - [ ] Prioritize categories (likely: Core engineering + top Languages first; long-tail
       domains as demand appears).
 - [~] Author/curate plugins per category; each passes the validator and has adapter coverage.
-      **8 plugins across 8 categories so far** (Documentation, Workflows, Testing, Security,
-      Bash / Shell, Development, Quality).
+      **11 plugins across 10 categories so far** — incl. the Languages family kickoff
+      (`python-idioms`, `typescript-idioms`, `ruby-idioms`), all authored with the dogfooding
+      toolkit.
 - [ ] Track coverage publicly (a coverage matrix: category × harness fidelity).
 - [ ] Establish a cadence for accepting community contributions at scale.
 

@@ -1,0 +1,9 @@
+{
+  "name": "typescript-idioms",
+  "description": "Write and review idiomatic TypeScript — use the type system well and avoid the escape hatches that defeat it.",
+  "version": "0.1.0",
+  "author": { "name": "Meagan Waller" },
+  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/typescript-idioms",
+  "license": "MIT",
+  "keywords": ["typescript", "idioms", "types", "style", "review"]
+}

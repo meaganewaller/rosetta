@@ -61,6 +61,27 @@
       "description": "Validate a plugin against the catalog quality bar and register it in marketplace.json with a valid category.",
       "category": "Quality",
       "version": "0.1.0"
+    },
+    {
+      "name": "python-idioms",
+      "source": "./plugins/python-idioms",
+      "description": "Write and review idiomatic modern Python — typing, data modeling, control flow, and the anti-patterns to avoid.",
+      "category": "Python",
+      "version": "0.1.0"
+    },
+    {
+      "name": "typescript-idioms",
+      "source": "./plugins/typescript-idioms",
+      "description": "Write and review idiomatic TypeScript — use the type system well and avoid the escape hatches that defeat it.",
+      "category": "TypeScript",
+      "version": "0.1.0"
+    },
+    {
+      "name": "ruby-idioms",
+      "source": "./plugins/ruby-idioms",
+      "description": "Write and review idiomatic Ruby — Enumerable-driven, expression-oriented style and the loops and nil-checks it replaces.",
+      "category": "Ruby",
+      "version": "0.1.0"
     }
   ]
 }

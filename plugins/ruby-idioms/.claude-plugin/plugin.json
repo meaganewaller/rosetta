@@ -1,0 +1,9 @@
+{
+  "name": "ruby-idioms",
+  "description": "Write and review idiomatic Ruby — Enumerable-driven, expression-oriented style and the loops and nil-checks it replaces.",
+  "version": "0.1.0",
+  "author": { "name": "Meagan Waller" },
+  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/ruby-idioms",
+  "license": "MIT",
+  "keywords": ["ruby", "idioms", "style", "enumerable", "review"]
+}
