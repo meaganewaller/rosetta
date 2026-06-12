@@ -5,6 +5,14 @@ node = "24"
 description = "Validate the catalog against the plugin spec"
 run = "node scripts/validate.ts"
 
+[tasks.cli]
+description = "Run the rosetta adapter CLI (e.g. mise run cli -- inspect changelog)"
+run = "node src/cli.ts"
+
+[tasks.test]
+description = "Run the tooling test suite (requires `npm install`)"
+run = "node --test"
+
 [tasks.typecheck]
 description = "Type-check the tooling (requires `npm install`)"
 run = "node_modules/.bin/tsc --noEmit"

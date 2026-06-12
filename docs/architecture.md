@@ -95,6 +95,10 @@ made operational.
   and at what fidelity. The matrix is data, surfaced in the catalog so consumers see
   per-harness support *before* installing.
 
+The first adapter — **Cursor** — is built and documented in
+[adapters/cursor.md](adapters/cursor.md), with its component mapping verified against the
+live Cursor docs. The contract it implements lives in `src/contract.ts`.
+
 ## Harness tiers (proposed)
 
 Rollout order for adapters, to be confirmed in the [roadmap](../ROADMAP.md#phase-2--adapter-layer-cli-installer):

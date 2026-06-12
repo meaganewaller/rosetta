@@ -25,6 +25,7 @@ to six harnesses.
 | See a worked example | [`plugins/changelog/`](../plugins/changelog/) |
 | Know which categories exist | [Categories](categories.md) |
 | Install a plugin into my harness | [Distribution](distribution.md) |
+| Understand a specific harness adapter | [Adapters: Cursor](adapters/cursor.md) |
 | See what's planned | [Roadmap](../ROADMAP.md) |
 
 ## Status

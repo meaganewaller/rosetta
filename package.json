@@ -3,13 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Tooling for the rosetta agentic plugin marketplace: the catalog validator today, adapters and the CLI in later phases.",
+  "description": "Tooling for the rosetta agentic plugin marketplace: the catalog validator and the harness adapters + CLI.",
+  "bin": {
+    "rosetta": "src/cli.ts"
+  },
   "engines": {
     "node": ">=22.18"
   },
   "scripts": {
     "validate": "node scripts/validate.ts",
+    "cli": "node src/cli.ts",
+    "test": "node --test",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "yaml": "^2.5.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

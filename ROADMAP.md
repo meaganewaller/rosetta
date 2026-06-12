@@ -70,24 +70,32 @@ the plugin's command, skill, and agent all loaded.)*
 
 ---
 
-## Phase 2 — Adapter layer & CLI installer
+## Phase 2 — Adapter layer & CLI installer *(in progress)*
 
-Make "any harness" real. This is the technical heart of the project.
+Make "any harness" real. This is the technical heart of the project. **Cursor slice landed**
+end-to-end (contract + adapter + CLI + golden tests); the remaining harnesses follow the same
+shape.
 
-- [ ] Define the **adapter contract**: input = canonical plugin; output = per-harness files +
-      a translation report (`NATIVE | DEMOTED | INLINED | SKIPPED`).
-- [ ] Build the **capability matrix** as data (per-harness, per-component fidelity).
-- [ ] **Validate the [component mapping](docs/architecture.md#components-and-how-they-translate)**
-      against each harness's *current* behavior — this table is design intent until proven.
-- [ ] Tier-1 adapters: **Codex CLI**, **Cursor**. Golden-file tests for each.
+- [x] Define the **adapter contract** ([`src/contract.ts`](src/contract.ts)): input = canonical
+      plugin; output = per-harness files + a translation report
+      (`NATIVE | DEMOTED | INLINED | SKIPPED`).
+- [~] Build the **capability matrix** — emerges from each adapter's declared mapping + report.
+      Cursor is documented in [`docs/adapters/cursor.md`](docs/adapters/cursor.md); the rest fill in
+      as adapters land.
+- [~] **Validate the [component mapping](docs/architecture.md#components-and-how-they-translate)**
+      against each harness's *current* behavior. **Cursor: done** (verified vs. cursor.com/docs,
+      June 2026). Others pending.
+- [~] Tier-1 adapters: **Cursor** ✅ (with golden-file tests), **Codex CLI** (next).
 - [ ] Tier-2 adapters: **OpenCode**, **Gemini CLI**.
 - [ ] Tier-3 adapter: **GitHub Copilot** (expect the most degradation).
-- [ ] The **CLI**: `add`, `inspect`, harness detection, `--harness` override, report output.
-- [ ] Decide + implement CLI distribution (npm / single binary / `mise`-installable).
+- [x] The **CLI** ([`src/cli.ts`](src/cli.ts)): `inspect` (dry run) + `add` (write), harness
+      detection, `--harness` override, `--into`, and the per-component report.
+- [~] CLI distribution: **decided** — run via Node / `mise run cli` for now; packaging
+      (npm / binary / mise) deferred until the adapters settle.
 
 **Exit criterion:** a single canonical plugin installs into all tier-1 harnesses via the
 CLI, each install prints an accurate translation report, and adapter output is covered by
-golden-file tests.
+golden-file tests. *(Cursor meets this today; Codex CLI is the remaining tier-1 target.)*
 
 ---
 

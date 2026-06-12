@@ -21,8 +21,8 @@ jobs:
       - name: Validate catalog
         run: node scripts/validate.ts
 
-  # Type-checks the tooling so the validator (and later the adapters/CLI) stay sound.
-  typecheck:
+  # Type-checks the tooling and runs the adapter test suite (golden files + fidelity).
+  checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,3 +32,4 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run typecheck
+      - run: npm test
