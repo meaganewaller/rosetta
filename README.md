@@ -9,8 +9,16 @@ never drift.
 
 ## Status
 
-**Phase 0 — foundations.** The direction, spec, and contributor on-ramp are written; the
-validator, adapters, CLI, and registry site are next. See the [roadmap](ROADMAP.md).
+Building in phases — see the [roadmap](ROADMAP.md) for detail.
+
+- ✅ **Phase 0 — Foundations.** Vision, architecture, plugin spec, taxonomy, distribution model.
+- ✅ **Phase 1 — Canonical authoring & Git marketplace.** A 5-plugin seed catalog, a CI-gated
+  [validator](scripts/validate.ts), and the `rosetta` marketplace — verified by a live
+  `/plugin install` in Claude Code.
+- 🚧 **Phase 2 — Adapter layer & CLI.** The [Cursor adapter](docs/adapters/cursor.md) + the
+  `rosetta` CLI translate a canonical plugin into another harness with a per-component fidelity
+  report. Codex CLI is next.
+- ⏳ **Phases 3–5** — catalog buildout, web registry/site, governance.
 
 ## Documentation
 
