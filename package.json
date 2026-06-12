@@ -12,6 +12,7 @@
   },
   "scripts": {
     "validate": "node scripts/validate.ts",
+    "coverage": "node scripts/coverage.ts",
     "cli": "node src/cli.ts",
     "test": "node --test",
     "typecheck": "tsc --noEmit"

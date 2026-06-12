@@ -9,6 +9,10 @@ run = "node scripts/validate.ts"
 description = "Run the rosetta adapter CLI (e.g. mise run cli -- inspect changelog)"
 run = "node src/cli.ts"
 
+[tasks.coverage]
+description = "Regenerate docs/coverage.md from the catalog"
+run = "node scripts/coverage.ts"
+
 [tasks.test]
 description = "Run the tooling test suite (requires `npm install`)"
 run = "node --test"

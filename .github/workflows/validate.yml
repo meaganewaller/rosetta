@@ -33,3 +33,8 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
+      - name: Coverage report is up to date
+        run: |
+          npm run coverage
+          git diff --exit-code -- docs/coverage.md \
+            || { echo "::error::docs/coverage.md is stale — run 'mise run coverage' and commit."; exit 1; }

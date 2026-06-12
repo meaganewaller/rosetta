@@ -27,6 +27,7 @@ to six harnesses.
 | Install a plugin into my harness | [Distribution](distribution.md) |
 | Understand a specific harness adapter | [Cursor](adapters/cursor.md) · [Codex CLI](adapters/codex.md) · [OpenCode](adapters/opencode.md) · [Gemini CLI](adapters/gemini.md) · [GitHub Copilot](adapters/copilot.md) |
 | See what's planned | [Roadmap](../ROADMAP.md) |
+| See catalog coverage + gaps | [Coverage](coverage.md) |
 
 ## Status
 

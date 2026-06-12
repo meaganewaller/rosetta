@@ -10,20 +10,9 @@ import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import process from "node:process";
 import { loadPlugin } from "./load.ts";
-import { cursorAdapter } from "./adapters/cursor.ts";
-import { codexAdapter } from "./adapters/codex.ts";
-import { opencodeAdapter } from "./adapters/opencode.ts";
-import { geminiAdapter } from "./adapters/gemini.ts";
-import { copilotAdapter } from "./adapters/copilot.ts";
-import type { Adapter, AdapterResult } from "./contract.ts";
+import { adapters as ADAPTERS } from "./adapters/index.ts";
+import type { AdapterResult } from "./contract.ts";
 
-const ADAPTERS: Record<string, Adapter> = {
-  cursor: cursorAdapter,
-  codex: codexAdapter,
-  opencode: opencodeAdapter,
-  gemini: geminiAdapter,
-  copilot: copilotAdapter,
-};
 const ROOT = process.cwd();
 
 function resolvePluginDir(nameOrPath: string): string {
