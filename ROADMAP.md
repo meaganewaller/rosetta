@@ -87,7 +87,8 @@ shape.
       live docs, June 2026). Tier-2/3 pending.
 - [x] Tier-1 adapters: **Cursor** ✅ and **Codex CLI** ✅ — both with golden-file tests.
       ([cursor.md](docs/adapters/cursor.md), [codex.md](docs/adapters/codex.md))
-- [ ] Tier-2 adapters: **OpenCode**, **Gemini CLI**.
+- [~] Tier-2 adapters: **OpenCode** ✅ (highest-fidelity yet — with golden tests,
+      [opencode.md](docs/adapters/opencode.md)), **Gemini CLI** (next).
 - [ ] Tier-3 adapter: **GitHub Copilot** (expect the most degradation).
 - [x] The **CLI** ([`src/cli.ts`](src/cli.ts)): `inspect` (dry run) + `add` (write), harness
       detection, `--harness` override, `--into`, and the per-component report.

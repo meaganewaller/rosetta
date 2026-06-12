@@ -12,9 +12,14 @@ import process from "node:process";
 import { loadPlugin } from "./load.ts";
 import { cursorAdapter } from "./adapters/cursor.ts";
 import { codexAdapter } from "./adapters/codex.ts";
+import { opencodeAdapter } from "./adapters/opencode.ts";
 import type { Adapter, AdapterResult } from "./contract.ts";
 
-const ADAPTERS: Record<string, Adapter> = { cursor: cursorAdapter, codex: codexAdapter };
+const ADAPTERS: Record<string, Adapter> = {
+  cursor: cursorAdapter,
+  codex: codexAdapter,
+  opencode: opencodeAdapter,
+};
 const ROOT = process.cwd();
 
 function resolvePluginDir(nameOrPath: string): string {
@@ -32,6 +37,7 @@ function resolvePluginDir(nameOrPath: string): string {
 }
 
 function detectHarness(into: string): string | null {
+  if (existsSync(join(into, ".opencode")) || existsSync(join(into, "opencode.json"))) return "opencode";
   if (existsSync(join(into, ".codex"))) return "codex";
   if (existsSync(join(into, ".cursor"))) return "cursor";
   return null;

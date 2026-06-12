@@ -11,15 +11,7 @@
 //   - Hooks:     no Codex equivalent → skipped.
 
 import type { Adapter, AdapterResult, CanonicalPlugin, OutputFile, ReportEntry } from "../contract.ts";
-import { yamlScalar } from "../util.ts";
-
-function skillMd(name: string, description: string, body: string): string {
-  return (
-    `---\nname: ${yamlScalar(name)}\ndescription: ${yamlScalar(description)}\n---\n\n` +
-    body.replace(/\s*$/, "") +
-    "\n"
-  );
-}
+import { skillMd } from "../util.ts";
 
 /** TOML basic (double-quoted) string. JSON escaping is a valid subset of TOML escaping. */
 function tomlString(s: string): string {

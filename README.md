@@ -16,9 +16,9 @@ Building in phases — see the [roadmap](ROADMAP.md) for detail.
   [validator](scripts/validate.ts), and the `rosetta` marketplace — verified by a live
   `/plugin install` in Claude Code.
 - 🚧 **Phase 2 — Adapter layer & CLI.** The `rosetta` CLI translates a canonical plugin into
-  another harness with a per-component fidelity report. Tier-1 adapters done:
-  [Cursor](docs/adapters/cursor.md) and [Codex CLI](docs/adapters/codex.md). OpenCode and
-  Gemini CLI are next.
+  another harness with a per-component fidelity report. Adapters done:
+  [Cursor](docs/adapters/cursor.md), [Codex CLI](docs/adapters/codex.md), and
+  [OpenCode](docs/adapters/opencode.md). Gemini CLI is next.
 - ⏳ **Phases 3–5** — catalog buildout, web registry/site, governance.
 
 ## Documentation
