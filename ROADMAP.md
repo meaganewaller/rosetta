@@ -41,7 +41,7 @@ package it, and where it's headed — without asking. ✅
 
 ---
 
-## Phase 1 — Canonical authoring & Git marketplace *(built — pending live verification)*
+## Phase 1 — Canonical authoring & Git marketplace *(done)*
 
 Make the catalog real and installable on Claude Code, with a quality gate.
 
@@ -63,9 +63,10 @@ Make the catalog real and installable on Claude Code, with a quality gate.
       `shell-lint` (Bash / Shell). All pass the validator with zero warnings.
 
 **Exit criterion:** `/plugin marketplace add` + `/plugin install` works for seed plugins on
-Claude Code, and no invalid plugin can merge. *(Gate is live and the catalog is built;
-still to verify in practice: a real `/plugin install …@rosetta` on Claude Code and the CI
-run on GitHub, both of which need the repo pushed to a remote.)*
+Claude Code, and no invalid plugin can merge. *(Met and verified end-to-end: CI is green on
+`main` — validator gate + type-check on every push/PR — and a live `/plugin marketplace add
+meaganewaller/agents` + `/plugin install changelog@rosetta` succeeded in Claude Code, with
+the plugin's command, skill, and agent all loaded.)*
 
 ---
 
