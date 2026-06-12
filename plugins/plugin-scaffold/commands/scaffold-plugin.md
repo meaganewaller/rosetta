@@ -21,7 +21,8 @@ Apply the `plugin-authoring` skill for the exact conventions, then create this s
 
 Before writing, confirm the component set with the user if it's ambiguous. After scaffolding:
 
-- Do **not** use absolute paths anywhere; use `${CLAUDE_PLUGIN_ROOT}` for path-like values.
+- Do **not** use absolute paths anywhere; reference the `CLAUDE_PLUGIN_ROOT` variable for
+  path-like values (name the variable in prose — Claude Code expands the `${…}` token at load time).
 - Remind the user to register the plugin in `.claude-plugin/marketplace.json` with a `category`
   from `catalog/categories.json`, then run `mise run validate`.
 

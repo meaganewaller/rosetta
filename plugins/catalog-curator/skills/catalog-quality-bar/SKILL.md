@@ -17,7 +17,7 @@ covers the judgment a reviewer brings on top.
   `keywords` recommended.
 - A `README.md` is present.
 - Component frontmatter: skills/agents have `name` + `description`; commands have `description`.
-- No hard-coded absolute paths (use `${CLAUDE_PLUGIN_ROOT}`).
+- No hard-coded absolute paths (reference the `CLAUDE_PLUGIN_ROOT` variable instead).
 - The `marketplace.json` `category` is one of the names in `catalog/categories.json`.
 - `name`/`version` agree between `plugin.json` and the `marketplace.json` entry; names are unique.
 

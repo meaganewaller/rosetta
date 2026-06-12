@@ -154,7 +154,11 @@ relocatable.
 
 To keep the catalog adapter-friendly and reviewable:
 
-- **No absolute paths.** Use `${CLAUDE_PLUGIN_ROOT}` for anything path-like.
+- **No absolute paths.** Use `${CLAUDE_PLUGIN_ROOT}` for anything path-like. But **don't write
+  that literal token in skill/command *prose*** — Claude Code interpolates it at load time, so a
+  doc that mentions it renders as an absolute path. Name the `CLAUDE_PLUGIN_ROOT` variable
+  instead when explaining it (this doc is reference text and isn't interpolated, so the literal
+  is fine here).
 - **Declare tools explicitly.** `allowed-tools` / `tools` should be least-privilege; this
   feeds both security review and adapter fidelity.
 - **Write trigger-quality descriptions.** Especially for skills and agents.

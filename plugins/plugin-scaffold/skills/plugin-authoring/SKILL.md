@@ -41,7 +41,10 @@ manifest field** — it lives catalog-side in `marketplace.json`.
 
 ## Authoring rules
 
-- **No absolute paths.** Use `${CLAUDE_PLUGIN_ROOT}` for anything path-like.
+- **No absolute paths.** Reference the plugin's install directory through the
+  `CLAUDE_PLUGIN_ROOT` variable instead of hard-coding a path. (Claude Code interpolates that
+  variable wherever it literally appears in a loaded skill or command — so *name* it in prose,
+  as here, rather than writing the `${…}` token, or your text renders as an absolute path.)
 - **Least privilege.** Declare `allowed-tools` / `tools` narrowly — it feeds both security review
   and adapter fidelity.
 - **Trigger-quality descriptions**, especially for skills and agents (see the
