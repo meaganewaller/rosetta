@@ -19,6 +19,27 @@
       "description": "Draft a clear, reviewer-friendly pull request description from the staged diff and commit history.",
       "category": "Workflows",
       "version": "0.1.0"
+    },
+    {
+      "name": "test-plan",
+      "source": "./plugins/test-plan",
+      "description": "Produce a focused test plan for a change — what to test, at which level, and the edge cases worth covering.",
+      "category": "Testing",
+      "version": "0.1.0"
+    },
+    {
+      "name": "secret-scan",
+      "source": "./plugins/secret-scan",
+      "description": "Scan a diff or files for committed secrets and walk through safe remediation.",
+      "category": "Security",
+      "version": "0.1.0"
+    },
+    {
+      "name": "shell-lint",
+      "source": "./plugins/shell-lint",
+      "description": "Lint and harden shell scripts with shellcheck and robust-bash conventions.",
+      "category": "Bash / Shell",
+      "version": "0.1.0"
     }
   ]
 }

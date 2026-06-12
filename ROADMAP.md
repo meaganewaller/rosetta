@@ -41,7 +41,7 @@ package it, and where it's headed — without asking. ✅
 
 ---
 
-## Phase 1 — Canonical authoring & Git marketplace *(in progress)*
+## Phase 1 — Canonical authoring & Git marketplace *(built — pending live verification)*
 
 Make the catalog real and installable on Claude Code, with a quality gate.
 
@@ -58,12 +58,14 @@ Make the catalog real and installable on Claude Code, with a quality gate.
       deeper one-off audits.)
 - [x] **CI** ([`.github/workflows/validate.yml`](.github/workflows/validate.yml)): runs the
       validator + a type-check on every push and PR.
-- [ ] Seed catalog: **2 of 3–5** done (`changelog` → Documentation, `pr-description` →
-      Workflows). Add ~3 more across distinct categories.
+- [x] Seed catalog: **5** plugins across distinct categories — `changelog` (Documentation),
+      `pr-description` (Workflows), `test-plan` (Testing), `secret-scan` (Security),
+      `shell-lint` (Bash / Shell). All pass the validator with zero warnings.
 
 **Exit criterion:** `/plugin marketplace add` + `/plugin install` works for seed plugins on
-Claude Code, and no invalid plugin can merge. *(Gate is live; remaining work is breadth of
-seed plugins.)*
+Claude Code, and no invalid plugin can merge. *(Gate is live and the catalog is built;
+still to verify in practice: a real `/plugin install …@rosetta` on Claude Code and the CI
+run on GitHub, both of which need the repo pushed to a remote.)*
 
 ---
 
