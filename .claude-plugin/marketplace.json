@@ -84,6 +84,13 @@
       "version": "0.1.0"
     },
     {
+      "name": "ruby-type-signature",
+      "source": "./plugins/ruby-type-signature",
+      "description": "Expert guidance for using a type system (RBS or Sorbet) with Ruby.",
+      "category": "Ruby",
+      "version": "0.1.0"
+    },
+    {
       "name": "prompt-engineering",
       "source": "./plugins/prompt-engineering",
       "description": "Write and review effective LLM prompts — specificity, structure, examples, output contracts, and the failure modes to design against.",

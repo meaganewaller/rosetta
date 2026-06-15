@@ -1,0 +1,9 @@
+{
+  "name": "ruby-type-signature",
+  "description": "Expert guidance for using a type system (RBS or Sorbet) with Ruby.",
+  "version": "0.1.0",
+  "author": { "name": "Meagan Waller" },
+  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/ruby-type-signature",
+  "license": "MIT",
+  "keywords": ["ruby", "type", "signature", "rbs", "sorbet"]
+}
