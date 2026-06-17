@@ -14,7 +14,7 @@ standard-library use, plus the anti-patterns to catch.
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install python-idioms@rosetta
 /python-review path/to/module.py
 ```

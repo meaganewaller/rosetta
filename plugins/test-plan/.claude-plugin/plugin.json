@@ -3,7 +3,7 @@
   "description": "Produce a focused test plan for a change — what to test, at which level, and the edge cases worth covering.",
   "version": "0.1.0",
   "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/test-plan",
+  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/test-plan",
   "license": "MIT",
   "keywords": ["testing", "test-plan", "coverage", "quality"]
 }

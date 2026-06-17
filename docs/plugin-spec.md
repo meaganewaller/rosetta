@@ -38,7 +38,7 @@ presence on disk is the registration.
   "description": "Generate and maintain a Keep a Changelog–style CHANGELOG.md from git history.",
   "version": "0.1.0",
   "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/changelog",
+  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/changelog",
   "license": "MIT",
   "keywords": ["changelog", "release-notes", "documentation"]
 }

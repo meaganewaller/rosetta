@@ -1,6 +1,6 @@
 # Vision
 
-> **Working title:** the repo ships as `meaganewaller/agents`. The product name is
+> **Working title:** the repo ships as `meaganewaller/rosetta`. The product name is
 > an open question — see [ROADMAP § Open questions](../ROADMAP.md#open-questions).
 
 ## The one-sentence version

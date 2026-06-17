@@ -17,7 +17,7 @@ No hooks or MCP servers — only the components that translate cleanly across ev
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install pr-description@rosetta
 /pr-description main
 ```

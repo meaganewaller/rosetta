@@ -3,7 +3,7 @@
   "owner": { "name": "Meagan Waller" },
   "metadata": {
     "description": "Author an agentic capability once in Claude Code's plugin format and ship it to every major harness.",
-    "homepage": "https://github.com/meaganewaller/agents"
+    "homepage": "https://github.com/meaganewaller/rosetta"
   },
   "plugins": [
     {

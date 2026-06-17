@@ -15,7 +15,7 @@ that silently defeat it. Assumes `strict: true`.
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install typescript-idioms@rosetta
 /ts-review src/load.ts
 ```

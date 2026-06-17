@@ -17,7 +17,7 @@ of scope — those are provider-specific. This plugin is about the prompt itself
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install prompt-engineering@rosetta
 /prompt-review prompts/classify.md
 ```

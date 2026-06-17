@@ -16,7 +16,7 @@ A **dogfooding** plugin — it checks the very plugins we author, including itse
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install catalog-curator@rosetta
 /check-plugin changelog
 ```

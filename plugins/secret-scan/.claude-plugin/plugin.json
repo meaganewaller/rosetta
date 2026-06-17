@@ -3,7 +3,7 @@
   "description": "Scan a diff or files for committed secrets and walk through safe remediation.",
   "version": "0.1.0",
   "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/secret-scan",
+  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/secret-scan",
   "license": "MIT",
   "keywords": ["security", "secrets", "credentials", "git"]
 }

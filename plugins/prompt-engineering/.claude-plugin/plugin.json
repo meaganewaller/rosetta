@@ -3,7 +3,7 @@
   "description": "Write and review effective LLM prompts — specificity, structure, examples, output contracts, and the failure modes to design against.",
   "version": "0.1.0",
   "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/prompt-engineering",
+  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/prompt-engineering",
   "license": "MIT",
   "keywords": ["prompt", "llm", "ai", "prompting", "review"]
 }

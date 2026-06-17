@@ -14,7 +14,7 @@ clauses, safe navigation, keyword args) and the manual loops and nil checks it r
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install ruby-idioms@rosetta
 /ruby-review app/models/user.rb
 ```

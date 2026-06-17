@@ -3,7 +3,7 @@
   "description": "Draft a clear, reviewer-friendly pull request description from the staged diff and commit history.",
   "version": "0.1.0",
   "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/pr-description",
+  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/pr-description",
   "license": "MIT",
   "keywords": ["pull-request", "review", "git", "workflow"]
 }

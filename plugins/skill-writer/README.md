@@ -17,7 +17,7 @@ A **dogfooding** plugin — used to raise the quality of every other skill in th
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install skill-writer@rosetta
 /write-skill keep-a-changelog
 ```

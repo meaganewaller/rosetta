@@ -26,7 +26,7 @@ The zero-infra channel. Claude Code can add a marketplace directly from a Git re
 **Consumer flow (Claude Code):**
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install changelog@rosetta
 ```
 

@@ -65,7 +65,7 @@ Make the catalog real and installable on Claude Code, with a quality gate.
 **Exit criterion:** `/plugin marketplace add` + `/plugin install` works for seed plugins on
 Claude Code, and no invalid plugin can merge. *(Met and verified end-to-end: CI is green on
 `main` — validator gate + type-check on every push/PR — and a live `/plugin marketplace add
-meaganewaller/agents` + `/plugin install changelog@rosetta` succeeded in Claude Code, with
+meaganewaller/rosetta` + `/plugin install changelog@rosetta` succeeded in Claude Code, with
 the plugin's command, skill, and agent all loaded.)*
 
 ---

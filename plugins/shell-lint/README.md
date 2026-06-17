@@ -18,7 +18,7 @@ reviewed manually against the skill.
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install shell-lint@rosetta
 /shell-lint ./scripts/deploy.sh
 ```

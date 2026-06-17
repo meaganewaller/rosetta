@@ -36,7 +36,7 @@ real install prints a translation report showing what actually landed.
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install changelog@rosetta
 /changelog 1.2.0
 ```

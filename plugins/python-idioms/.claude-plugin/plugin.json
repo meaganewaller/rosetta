@@ -3,7 +3,7 @@
   "description": "Write and review idiomatic modern Python — typing, data modeling, control flow, and the anti-patterns to avoid.",
   "version": "0.1.0",
   "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/python-idioms",
+  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/python-idioms",
   "license": "MIT",
   "keywords": ["python", "idioms", "style", "typing", "review"]
 }

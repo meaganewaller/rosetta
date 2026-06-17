@@ -17,7 +17,7 @@ the catalog.
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install plugin-scaffold@rosetta
 /scaffold-plugin my-plugin Utilities
 ```

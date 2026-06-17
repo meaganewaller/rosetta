@@ -17,7 +17,7 @@ the change with an eval. Model/runner choices are out of scope (provider-specifi
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install llm-evals@rosetta
 /design-eval "support-ticket classifier"
 ```

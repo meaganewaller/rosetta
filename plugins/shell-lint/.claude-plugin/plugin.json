@@ -3,7 +3,7 @@
   "description": "Lint and harden shell scripts with shellcheck and robust-bash conventions.",
   "version": "0.1.0",
   "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/agents/tree/main/plugins/shell-lint",
+  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/shell-lint",
   "license": "MIT",
   "keywords": ["bash", "shell", "shellcheck", "linting"]
 }

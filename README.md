@@ -1,4 +1,4 @@
-# Agentic Plugin Marketplace
+# Rosetta - Agentic Workflow Building Blocks
 
 > Production-ready agentic workflow building blocks: Plugins, agents, skills, and commands built for Claude Code and consumed natively by OpenAI Codex CLI, Cursor, OpenCode, Gemini CLI, GitHub Copilot, Google Antigravity, and Zed from a single Markdown source.
 
@@ -47,10 +47,10 @@ MIT — see [LICENSE](LICENSE).
 
 ## Star History
 
-<a href="https://www.star-history.com/?type=date&legend=top-left&repos=meaganewaller%2Fagents">
+<a href="https://www.star-history.com/?type=date&legend=top-left&repos=meaganewaller%2Frosetta">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=meaganewaller/agents&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=meaganewaller/agents&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=meaganewaller/agents&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=meaganewaller/rosetta&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=meaganewaller/rosetta&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=meaganewaller/rosetta&type=date&legend=top-left" />
  </picture>
 </a>

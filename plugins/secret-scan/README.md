@@ -17,7 +17,7 @@ The command **reports and advises**; it never rewrites git history on its own.
 ## Try it (Claude Code)
 
 ```
-/plugin marketplace add meaganewaller/agents
+/plugin marketplace add meaganewaller/rosetta
 /plugin install secret-scan@rosetta
 /secret-scan
 ```
