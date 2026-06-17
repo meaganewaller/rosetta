@@ -33,6 +33,10 @@ function detectHarness(into: string): string | null {
   if (existsSync(join(into, ".opencode")) || existsSync(join(into, "opencode.json"))) return "opencode";
   if (existsSync(join(into, ".codex"))) return "codex";
   if (existsSync(join(into, ".cursor"))) return "cursor";
+  if (existsSync(join(into, ".zed"))) return "zed";
+  // Antigravity shares the `.agents/` skills root with Codex/Zed; `.agents/workflows` is its
+  // own marker. Check before the broader `.gemini` (Gemini CLI) probe.
+  if (existsSync(join(into, ".agents/workflows"))) return "antigravity";
   if (existsSync(join(into, ".gemini"))) return "gemini";
   if (existsSync(join(into, ".github/copilot-instructions.md"))) return "copilot";
   return null;

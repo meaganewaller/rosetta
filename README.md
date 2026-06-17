@@ -1,6 +1,6 @@
 # Agentic Plugin Marketplace
 
-> Production-ready agentic workflow building blocks: Plugins, agents, skills, and commands built for Claude Code and consumed natively by OpenAI Codex CLI, Cursor, OpenCode, Gemini CLI, and GitHub Copilot from a single Markdown source.
+> Production-ready agentic workflow building blocks: Plugins, agents, skills, and commands built for Claude Code and consumed natively by OpenAI Codex CLI, Cursor, OpenCode, Gemini CLI, GitHub Copilot, Google Antigravity, and Zed from a single Markdown source.
 
 Author a capability **once** in Claude Code's plugin format, and ship it to every major
 agentic coding harness. A deterministic adapter layer translates the single canonical
@@ -16,10 +16,11 @@ Building in phases — see the [roadmap](ROADMAP.md) for detail.
   [validator](scripts/validate.ts), and the `rosetta` marketplace — verified by a live
   `/plugin install` in Claude Code.
 - ✅ **Phase 2 — Adapter layer & CLI.** The `rosetta` CLI translates a canonical plugin into
-  **all five target harnesses** with a per-component fidelity report:
+  **seven target harnesses** with a per-component fidelity report:
   [Cursor](docs/adapters/cursor.md), [Codex CLI](docs/adapters/codex.md),
-  [OpenCode](docs/adapters/opencode.md), [Gemini CLI](docs/adapters/gemini.md), and
-  [GitHub Copilot](docs/adapters/copilot.md) — each golden-file tested.
+  [OpenCode](docs/adapters/opencode.md), [Gemini CLI](docs/adapters/gemini.md),
+  [GitHub Copilot](docs/adapters/copilot.md), [Google Antigravity](docs/adapters/antigravity.md),
+  and [Zed](docs/adapters/zed.md) — each golden-file tested.
 - 🚧 **Phase 3 — Catalog buildout.** Populating the [taxonomy](docs/categories.md) with depth,
   starting by dogfooding — an authoring toolkit (`plugin-scaffold`, `skill-writer`,
   `catalog-curator`), then the Languages family and the AI & ML cluster. **14 plugins across

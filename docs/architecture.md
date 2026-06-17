@@ -1,6 +1,6 @@
 # Architecture
 
-How a single Markdown source reaches six harnesses. This is the explanation doc; the
+How a single Markdown source reaches eight harnesses. This is the explanation doc; the
 [plugin spec](plugin-spec.md) is the precise reference, and [distribution](distribution.md)
 covers how plugins are delivered.
 
@@ -95,23 +95,27 @@ made operational.
   and at what fidelity. The matrix is data, surfaced in the catalog so consumers see
   per-harness support *before* installing.
 
-All five target adapters are built, each verified against its harness's live docs and covered
+All seven target adapters are built, each verified against its harness's live docs and covered
 by golden-file tests: **[Cursor](adapters/cursor.md)**, **[Codex CLI](adapters/codex.md)**,
-**[OpenCode](adapters/opencode.md)**, **[Gemini CLI](adapters/gemini.md)**, and
-**[GitHub Copilot](adapters/copilot.md)**. They map the same plugin differently — Cursor keeps
+**[OpenCode](adapters/opencode.md)**, **[Gemini CLI](adapters/gemini.md)**,
+**[GitHub Copilot](adapters/copilot.md)**, **[Google Antigravity](adapters/antigravity.md)**, and
+**[Zed](adapters/zed.md)**. They map the same plugin differently — Cursor keeps
 slash commands but loses the subagent concept; Codex keeps subagents but has no project slash
 command; OpenCode keeps everything; Gemini keeps everything but in TOML; Copilot keeps
-everything across `.github/*` files — which is exactly what the fidelity report communicates.
+everything across `.github/*` files; Antigravity keeps slash commands (as workflows) but folds
+agents into rules; Zed retired Rules in favor of Skills, so commands and agents both land as
+skills — which is exactly what the fidelity report communicates.
 The contract they implement lives in `src/contract.ts`.
 
-Two findings fell out of building all five:
+Two findings fell out of building these adapters:
 
-1. **`SKILL.md` is now a cross-harness open standard.** Codex, OpenCode, Gemini, *and* Copilot
-   have all adopted Claude Code's skill format, so skills map NATIVE everywhere. The ecosystem's
-   divergence is in commands and agents, not in knowledge.
+1. **`SKILL.md` is now a cross-harness open standard.** Codex, OpenCode, Gemini, Copilot,
+   Antigravity, *and* Zed all read Claude Code's skill format — Antigravity and Zed via the shared
+   `.agents/skills/` directory — so skills map NATIVE everywhere. The ecosystem's divergence is in
+   commands and agents, not in knowledge.
 2. **No current target needs the `INLINED` rung.** Because every harness has a skills primitive,
    skills never have to be folded into an always-on context file. `INLINED` stays in the
-   contract for a future harness that lacks one — but as of June 2026, none of the five do.
+   contract for a future harness that lacks one — but as of June 2026, none of the seven do.
 
 ## Harness tiers (proposed)
 
@@ -122,6 +126,9 @@ Rollout order for adapters, to be confirmed in the [roadmap](../ROADMAP.md#phase
 - **Tier 2 — OpenCode, Gemini CLI:** close component models, fast to follow.
 - **Tier 3 — GitHub Copilot:** most constrained extension model; built last, expect the
   most `DEMOTED`/`SKIPPED` entries.
+- **Tier 4 — Google Antigravity, Zed:** `.agents/` Agent Skills adopters; added after the
+  initial five. Antigravity keeps slash commands as workflows; Zed folds commands and agents
+  into skills.
 
 ## Distribution, briefly
 

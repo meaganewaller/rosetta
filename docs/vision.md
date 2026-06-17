@@ -7,7 +7,7 @@
 
 Author an agentic capability **once**, in Claude Code's plugin format, and ship it to
 every major agentic coding harness — Claude Code, OpenAI Codex CLI, Cursor, OpenCode,
-Gemini CLI, and GitHub Copilot — from a single Markdown source.
+Gemini CLI, GitHub Copilot, Google Antigravity, and Zed — from a single Markdown source.
 
 ## The problem
 
@@ -20,6 +20,8 @@ to be rewritten for each tool:
 - Codex CLI and OpenCode lean on `AGENTS.md` and custom prompts.
 - Gemini CLI wants `GEMINI.md` and TOML commands.
 - Copilot wants `.github/copilot-instructions.md` and `*.prompt.md` files.
+- Antigravity wants `.agents/skills/`, `.agents/workflows/`, and a global `mcp_config.json`.
+- Zed wants `.agents/skills/`, `AGENTS.md`, and `context_servers` in `.zed/settings.json`.
 
 The *content* — the actual instructions, the actual domain knowledge — is ~90% the same.
 The *packaging* is what differs. Authors pay that packaging tax over and over, and

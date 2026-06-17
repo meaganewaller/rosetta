@@ -7,6 +7,8 @@ import { codexAdapter } from "./codex.ts";
 import { opencodeAdapter } from "./opencode.ts";
 import { geminiAdapter } from "./gemini.ts";
 import { copilotAdapter } from "./copilot.ts";
+import { antigravityAdapter } from "./antigravity.ts";
+import { zedAdapter } from "./zed.ts";
 
 export const adapters: Record<string, Adapter> = {
   cursor: cursorAdapter,
@@ -14,4 +16,6 @@ export const adapters: Record<string, Adapter> = {
   opencode: opencodeAdapter,
   gemini: geminiAdapter,
   copilot: copilotAdapter,
+  antigravity: antigravityAdapter,
+  zed: zedAdapter,
 };
