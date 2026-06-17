@@ -16,7 +16,7 @@ These were settled at kickoff and frame everything below:
 | **Source of truth** | Claude Code plugin format is canonical; all other harnesses are generated targets. |
 | **Distribution** | All three channels: Git marketplace + CLI installer/adapter + web registry/site. |
 | **First doc pass** | Roadmap-first lean set (this document set). |
-| **Target harnesses** | Claude Code (source) + Codex CLI, Cursor, OpenCode, Gemini CLI, GitHub Copilot. |
+| **Target harnesses** | Claude Code (source) + Codex CLI, Cursor, OpenCode, Gemini CLI, GitHub Copilot, Google Antigravity, Zed. |
 | **Marketplace name** | `rosetta` — the `name` in `marketplace.json`; installs read `plugin@rosetta`. Product/site branding deferred. |
 | **Category metadata** | Catalog-side, in `marketplace.json` entries; validated against `catalog/categories.json`. |
 | **Tooling stack** | Node / TypeScript, run via Node's native type stripping (no build step). |
@@ -73,7 +73,7 @@ the plugin's command, skill, and agent all loaded.)*
 ## Phase 2 — Adapter layer & CLI installer *(done)*
 
 Make "any harness" real. This is the technical heart of the project — and it's built: one
-canonical plugin now translates to **all five target harnesses**, each with an accurate
+canonical plugin now translates to **seven target harnesses**, each with an accurate
 fidelity report and golden-file tests.
 
 - [x] Define the **adapter contract** ([`src/contract.ts`](src/contract.ts)): input = canonical
@@ -82,13 +82,16 @@ fidelity report and golden-file tests.
 - [x] Build the **capability matrix** — emerges from each adapter's declared mapping + report,
       documented per harness in [`docs/adapters/`](docs/adapters/).
 - [x] **Validate the [component mapping](docs/architecture.md#components-and-how-they-translate)**
-      against each harness's *current* behavior — **all five verified vs. live docs, June 2026.**
+      against each harness's *current* behavior — **all seven verified vs. live docs, June 2026.**
 - [x] Tier-1 adapters: **Cursor** ✅ and **Codex CLI** ✅ — with golden-file tests.
       ([cursor.md](docs/adapters/cursor.md), [codex.md](docs/adapters/codex.md))
 - [x] Tier-2 adapters: **OpenCode** ✅ and **Gemini CLI** ✅ — with golden-file tests.
       ([opencode.md](docs/adapters/opencode.md), [gemini.md](docs/adapters/gemini.md))
 - [x] Tier-3 adapter: **GitHub Copilot** ✅ — with golden-file tests.
       ([copilot.md](docs/adapters/copilot.md))
+- [x] Tier-4 adapters: **Google Antigravity** ✅ and **Zed** ✅ — `.agents/` Agent Skills
+      adopters, with golden-file tests.
+      ([antigravity.md](docs/adapters/antigravity.md), [zed.md](docs/adapters/zed.md))
 - [x] The **CLI** ([`src/cli.ts`](src/cli.ts)): `inspect` (dry run) + `add` (write), harness
       detection, `--harness` override, `--into`, and the per-component report.
 - [~] CLI distribution: **decided** — run via Node / `mise run cli` for now; packaging
@@ -96,9 +99,9 @@ fidelity report and golden-file tests.
 
 **Exit criterion:** a single canonical plugin installs into all tier-1 harnesses via the
 CLI, each install prints an accurate translation report, and adapter output is covered by
-golden-file tests. *(Met and exceeded: `changelog` translates to all five harnesses — Cursor,
-Codex CLI, OpenCode, Gemini CLI, and GitHub Copilot — each with an accurate report and
-golden-file tests.)*
+golden-file tests. *(Met and exceeded: `changelog` translates to all seven harnesses — Cursor,
+Codex CLI, OpenCode, Gemini CLI, GitHub Copilot, Google Antigravity, and Zed — each with an
+accurate report and golden-file tests.)*
 
 ---
 

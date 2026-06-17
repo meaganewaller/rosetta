@@ -168,6 +168,6 @@ To keep the catalog adapter-friendly and reviewable:
 
 ## Read next
 
-- [Architecture](architecture.md) — how this format becomes six harness packages.
+- [Architecture](architecture.md) — how this format becomes eight harness packages.
 - [Contributing](../CONTRIBUTING.md) — the submission + validation flow.
 - [Reference plugin](../plugins/changelog/) — this spec, fully worked.

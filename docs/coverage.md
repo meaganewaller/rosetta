@@ -72,20 +72,20 @@
 
 Per plugin, the translation report for each harness (`N`ative · `D`emoted · `I`nlined · `S`kipped).
 
-| Plugin | cursor | codex | opencode | gemini | copilot |
-| --- | --- | --- | --- | --- | --- |
-| changelog | 1N 2D | 1N 2D | 1N 2D | 1N 2D | 1N 2D |
-| pr-description | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| test-plan | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| secret-scan | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| shell-lint | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| plugin-scaffold | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| skill-writer | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| catalog-curator | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| python-idioms | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| typescript-idioms | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| ruby-idioms | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| ruby-type-signature | 4N | 4N | 4N | 4N | 4N |
-| prompt-engineering | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| llm-evals | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
-| agent-memory | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| Plugin | cursor | codex | opencode | gemini | copilot | antigravity | zed |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| changelog | 1N 2D | 1N 2D | 1N 2D | 1N 2D | 1N 2D | 1N 2D | 1N 2D |
+| pr-description | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| test-plan | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| secret-scan | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| shell-lint | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| plugin-scaffold | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| skill-writer | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| catalog-curator | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| python-idioms | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| typescript-idioms | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| ruby-idioms | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| ruby-type-signature | 4N | 4N | 4N | 4N | 4N | 4N | 4N |
+| prompt-engineering | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| llm-evals | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
+| agent-memory | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D | 1N 1D |
