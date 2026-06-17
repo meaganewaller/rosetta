@@ -41,7 +41,6 @@
     "node": ">=22.18"
   },
   "scripts": {
-    "postinstall": "echo '\\n rosetta installed!\\n Run: npx rosetta-install typescript\\n Docs: https://github.com/meaganewaller/rosetta\\n'",
     "lint": "biome check . && markdownlint '**/*.md' --ignore node_modules",
     "lint:fix": "biome lint --write . && markdownlint '**/*.md' --ignore node_modules --fix",
     "validate": "node scripts/validate.ts",
