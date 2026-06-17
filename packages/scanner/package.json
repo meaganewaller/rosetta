@@ -1,0 +1,23 @@
+{
+  "name": "@rosetta/scanner",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "rosetta-scan": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@rosetta/core": "workspace:*",
+    "@rosetta/content": "workspace:*"
+  }
+}
