@@ -12,7 +12,7 @@ the fidelity profile is almost the inverse of Cursor's.
 ## Component mapping
 
 | Canonical component | Codex target | Fidelity | What transfers / what's lost |
-|---------------------|--------------|----------|------------------------------|
+| --------------------- | -------------- | ---------- | ------------------------------ |
 | **Skill** (`skills/<n>/SKILL.md`) | `.agents/skills/<n>/SKILL.md` | **NATIVE** | Codex skills use the **same `SKILL.md` format** (name + description frontmatter + body). Essentially a 1:1 relocation. |
 | **Command** (`commands/<n>.md`) | `.agents/skills/<n>/SKILL.md` | **DEMOTED** | Codex has **no project-scoped slash command** — custom prompts live only in `~/.codex/prompts` and are deprecated. Mapped to an explicitly-invokable skill; `allowed-tools` and `$1`/`$ARGUMENTS` are not represented. |
 | **Agent** (`agents/<n>.md`) | `.codex/agents/<n>.toml` | **NATIVE** or **DEMOTED** | Codex **has subagents** (`name` / `description` / `developer_instructions`), so the subagent concept survives — unlike Cursor. **DEMOTED** when the source sets `model` (Codex's model namespace differs) or `tools` (Codex scopes via `sandbox_mode` / `mcp_servers`). |
@@ -24,7 +24,7 @@ the fidelity profile is almost the inverse of Cursor's.
 The same plugin lands differently, which is exactly why the report exists:
 
 | Component | Cursor | Codex |
-|-----------|--------|-------|
+| ----------- | -------- | ------- |
 | Skill | NATIVE (as a `.mdc` rule) | NATIVE (as a Codex skill) |
 | Command | NATIVE/DEMOTED (real slash command) | **DEMOTED** (no slash command → skill) |
 | Agent | **DEMOTED** (subagent concept lost → rule) | **DEMOTED** (subagent concept *kept* → `.toml`) |

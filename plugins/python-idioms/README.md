@@ -6,7 +6,7 @@ standard-library use, plus the anti-patterns to catch.
 ## What's in it
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Skill** | [`skills/writing-idiomatic-python/SKILL.md`](skills/writing-idiomatic-python/SKILL.md) | Modern Python idioms and the anti-patterns to avoid; pulled in when writing or reviewing Python. |
 | **Command** | [`commands/python-review.md`](commands/python-review.md) | `/python-review [file]` — reviews a file for idiomatic improvements. |
 | **Manifest** | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Name, version, author, license, keywords. |

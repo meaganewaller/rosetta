@@ -6,7 +6,7 @@ component stubs that pass the validator out of the box. The fastest way to start
 ## What's in it
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Command** | [`commands/scaffold-plugin.md`](commands/scaffold-plugin.md) | `/scaffold-plugin <name> [category]` — generates a spec-compliant plugin skeleton under `plugins/<name>/`. |
 | **Skill** | [`skills/plugin-authoring/SKILL.md`](skills/plugin-authoring/SKILL.md) | The canonical plugin layout, manifest fields, component frontmatter, and authoring rules. |
 | **Manifest** | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Name, version, author, license, keywords. |

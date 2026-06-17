@@ -7,7 +7,7 @@ what was tested.
 ## What's in it
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Command** | [`commands/pr-description.md`](commands/pr-description.md) | `/pr-description [base-branch]` — drafts the PR body from `git diff`/`git log` against the base branch. |
 | **Skill** | [`skills/pull-request-conventions/SKILL.md`](skills/pull-request-conventions/SKILL.md) | Reviewer-focused PR structure and tone, pulled in automatically when writing a PR description. |
 | **Manifest** | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Name, version, author, license, keywords. |

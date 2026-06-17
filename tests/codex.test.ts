@@ -62,8 +62,10 @@ test("codex adapter: MCP → config.toml, DEMOTED when it uses CLAUDE_PLUGIN_ROO
   assert.equal(plainEntry?.status, "NATIVE");
   assert.ok(plain.files.some((f) => f.path === ".codex/config.toml" && f.contents.includes("[mcp_servers.db]")));
 
+  const command = `${process.env.CLAUDE_PLUGIN_ROOT}/bin/x`;
+
   const rooted = codexAdapter.adapt(
-    emptyPlugin({ mcp: { mcpServers: { x: { command: "${CLAUDE_PLUGIN_ROOT}/bin/x" } } } }),
+    emptyPlugin({ mcp: { mcpServers: { x: { command } } } }),
   );
   assert.equal(rooted.report.find((e) => e.kind === "mcp")?.status, "DEMOTED");
 });

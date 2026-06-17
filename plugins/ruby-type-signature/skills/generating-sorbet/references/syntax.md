@@ -1,6 +1,6 @@
 # Sorbet RBI Syntax Guide
 
-Source: https://sorbet.org/docs/rbi
+Source: <https://sorbet.org/docs/rbi>
 
 ## Contents
 

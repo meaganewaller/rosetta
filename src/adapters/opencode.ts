@@ -52,7 +52,7 @@ export const opencodeAdapter: Adapter = {
     for (const c of plugin.commands) {
       const path = `.opencode/commands/${c.name}.md`;
       const fm = c.description ? `---\ndescription: ${yamlScalar(c.description)}\n---\n\n` : "";
-      files.push({ path, contents: fm + c.body.replace(/\s*$/, "") + "\n" });
+      files.push({ path, contents: `${fm + c.body.replace(/\s*$/, "")}\n` });
       // allowed-tools has no command-level field (tool access is set on the agent a command runs as).
       report.push({
         component: `command:${c.name}`,
@@ -71,7 +71,7 @@ export const opencodeAdapter: Adapter = {
       const fmLines = ["---"];
       if (a.description) fmLines.push(`description: ${yamlScalar(a.description)}`);
       fmLines.push("mode: subagent", "---");
-      files.push({ path, contents: fmLines.join("\n") + "\n\n" + a.body.replace(/\s*$/, "") + "\n" });
+      files.push({ path, contents: `${fmLines.join("\n")}\n\n${a.body.replace(/\s*$/, "")}\n` });
       const lost: string[] = [];
       if (a.model) lost.push(`model (${a.model}) dropped — OpenCode uses provider/model ids`);
       if (a.tools) lost.push("tool list dropped — OpenCode scopes via the agent `permission` object");
@@ -88,14 +88,14 @@ export const opencodeAdapter: Adapter = {
     if (plugin.mcp) {
       const path = `opencode.json`;
       const { config, usesPluginRoot } = mcpToOpencode(plugin.mcp);
-      files.push({ path, contents: JSON.stringify(config, null, 2) + "\n" });
+      files.push({ path, contents: `${JSON.stringify(config, null, 2)}\n` });
       report.push({
         component: "mcp:.mcp.json",
         kind: "mcp",
         status: usesPluginRoot ? "DEMOTED" : "NATIVE",
         target: path,
         note: usesPluginRoot
-          ? "${CLAUDE_PLUGIN_ROOT} does not resolve in OpenCode"
+          ? `${process.env.CLAUDE_PLUGIN_ROOT} does not resolve in OpenCode`
           : "merge the `mcp` key into an existing opencode.json if present",
       });
     }

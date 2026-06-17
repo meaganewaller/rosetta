@@ -6,7 +6,7 @@ then remove from code and history. Findings are reported with the value **redact
 ## What's in it
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Command** | [`commands/secret-scan.md`](commands/secret-scan.md) | `/secret-scan [path]` — scans the staged diff (or given paths) and reports redacted findings with remediation. |
 | **Skill** | [`skills/secret-remediation/SKILL.md`](skills/secret-remediation/SKILL.md) | Detection patterns and the correct remediation order, pulled in whenever secrets come up. |
 | **Manifest** | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Name, version, author, license, keywords. |

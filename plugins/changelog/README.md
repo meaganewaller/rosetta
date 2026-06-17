@@ -12,7 +12,7 @@ This plugin deliberately exercises three of the canonical component types so it 
 spec demo:
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Command** | [`commands/changelog.md`](commands/changelog.md) | `/changelog [version]` — builds/updates `CHANGELOG.md` from commits since the last tag. |
 | **Skill** | [`skills/keep-a-changelog/SKILL.md`](skills/keep-a-changelog/SKILL.md) | The Keep a Changelog formatting conventions, pulled in automatically when editing a changelog. |
 | **Agent** | [`agents/release-notes-writer.md`](agents/release-notes-writer.md) | A subagent that turns a commit range into human-readable release notes grouped by theme. |
@@ -24,7 +24,7 @@ translate cleanly across all harnesses (see [portability](../../docs/architectur
 ## How it translates
 
 | Component | Claude Code | Codex CLI / OpenCode | Cursor | Gemini CLI | Copilot |
-|-----------|-------------|----------------------|--------|------------|---------|
+| ----------- | ------------- | ---------------------- | -------- | ------------ | --------- |
 | `/changelog` command | native | custom prompt | command | TOML command | `*.prompt.md` |
 | `keep-a-changelog` skill | native | `AGENTS.md` section | `.cursor/rules/*.mdc` | `GEMINI.md` section | `copilot-instructions.md` |
 | `release-notes-writer` agent | native | agent / demoted | demoted to command | demoted | custom agent / demoted |

@@ -13,7 +13,7 @@ and agents (which have no dedicated Zed primitive) fold into skills.
 ## Component mapping
 
 | Canonical component | Zed target | Fidelity | What transfers / what's lost |
-|---------------------|-----------|----------|------------------------------|
+| --------------------- | ----------- | ---------- | ------------------------------ |
 | **Skill** (`skills/<n>/SKILL.md`) | `.agents/skills/<n>/SKILL.md` | **NATIVE** | Zed skills use the **same `SKILL.md` format** (`name` + `description` frontmatter, optional `disable-model-invocation`). Model-invoked or slash-invoked (`/n`). 1:1 relocation. |
 | **Command** (`commands/<n>.md`) | `.agents/skills/<n>/SKILL.md` (`disable-model-invocation: true`) | **DEMOTED** | Zed has **no separate slash-command primitive** — skills *are* the slash commands. Setting `disable-model-invocation: true` keeps it explicitly-invoked (`/n`), not autonomous. `allowed-tools` and `$1`/`$ARGUMENTS` are not represented. |
 | **Agent** (`agents/<n>.md`) | `.agents/skills/<n>/SKILL.md` | **DEMOTED** | Zed has **no file-based subagent** with a system prompt (Agent Profiles are tool scopes; External Agents are ACP binaries). The persona becomes a model-invoked skill; `model` and `tools` are dropped. |
@@ -27,7 +27,7 @@ Because Zed retired Rules in favor of Skills, **all three prompt-bearing compone
 skills. That's a different shape than every other adapter:
 
 | Component | Zed | Codex | OpenCode |
-|-----------|-----|-------|----------|
+| ----------- | ----- | ------- | ---------- |
 | Skill | NATIVE (skill) | NATIVE (skill) | NATIVE (skill) |
 | Command | DEMOTED (manual skill) | DEMOTED (skill) | NATIVE (command) |
 | Agent | DEMOTED (skill) | NATIVE (subagent `.toml`) | NATIVE (subagent) |

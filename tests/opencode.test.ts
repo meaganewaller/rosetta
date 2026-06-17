@@ -75,8 +75,10 @@ test("opencode adapter: MCP → opencode.json, DEMOTED when it uses CLAUDE_PLUGI
   const cfg = plain.files.find((f) => f.path === "opencode.json");
   assert.ok(cfg && JSON.parse(cfg.contents).mcp.db.type === "local");
 
+  const command = `${process.env.CLAUDE_PLUGIN_ROOT}/bin/x`;
+
   const rooted = opencodeAdapter.adapt(
-    emptyPlugin({ mcp: { mcpServers: { x: { command: "${CLAUDE_PLUGIN_ROOT}/bin/x" } } } }),
+    emptyPlugin({ mcp: { mcpServers: { x: { command } } } }),
   );
   assert.equal(rooted.report.find((e) => e.kind === "mcp")?.status, "DEMOTED");
 });

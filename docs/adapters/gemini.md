@@ -11,7 +11,7 @@ native project files. Gemini's structure is the most distinct so far — **TOML 
 ## Component mapping
 
 | Canonical component | Gemini target | Fidelity | What transfers / what's lost |
-|---------------------|---------------|----------|------------------------------|
+| --------------------- | --------------- | ---------- | ------------------------------ |
 | **Skill** (`skills/<n>/SKILL.md`) | `.gemini/skills/<n>/SKILL.md` | **NATIVE** | Gemini Agent Skills use the same `SKILL.md` format (also reads the `.agents/skills/` alias). |
 | **Command** (`commands/<n>.md`) | `.gemini/commands/<n>.toml` | **NATIVE** or **DEMOTED** | TOML with `description` + `prompt`. `$ARGUMENTS` is rewritten to Gemini's `{{args}}`. **DEMOTED** when the body uses positional `$1..$9` (Gemini injects *all* args via `{{args}}`) or `allowed-tools` (no command-level equivalent). |
 | **Agent** (`agents/<n>.md`) | `.gemini/agents/<n>.md` | **NATIVE** or **DEMOTED** | Gemini subagents are Markdown + frontmatter (`name`, `description`, body = system prompt). The subagent concept is preserved. **DEMOTED** when the source sets `model` or `tools` (Gemini has its own model ids and tool names). |

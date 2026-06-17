@@ -209,7 +209,6 @@ end
 
 Keyword arguments are declared similar to in ruby, with the keyword immediately followed by a colon. Keyword arguments that are optional are indicated as optional using the same `?` prefix as positional arguments.
 
-
 ### Class methods
 
 **Example**: `Time.now`
@@ -272,7 +271,6 @@ end
 Generic types in RBS are parameterized at declaration time. These type variables are then available throughout all the methods contained in the `class` block.
 
 `Hash`'s `#keys` method takes no arguments, and returns an `Array` of the first type parameter. In the above example, `a` is of concrete type `Hash[String, Integer]`, so `#keys` returns an `Array` for `String`.
-
 
 ```ruby
 a = [ "a", "b", "c", "d" ]

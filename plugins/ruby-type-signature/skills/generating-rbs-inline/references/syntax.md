@@ -1,6 +1,6 @@
 # RBS-Inline Syntax Guide
 
-Source: https://github.com/soutaro/rbs-inline/wiki/Syntax-guide
+Source: <https://github.com/soutaro/rbs-inline/wiki/Syntax-guide>
 
 ## Magic Comment
 

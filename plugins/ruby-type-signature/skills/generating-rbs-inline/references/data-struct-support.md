@@ -1,6 +1,6 @@
 # Data and Struct Support
 
-Source: https://github.com/soutaro/rbs-inline/wiki/Data-Struct-support
+Source: <https://github.com/soutaro/rbs-inline/wiki/Data-Struct-support>
 
 ## Overview
 

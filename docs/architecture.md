@@ -59,7 +59,7 @@ harness's current behavior during Phase 2 adapter work**; harness capabilities m
 and this table is a design intent, not a verified guarantee.
 
 | Canonical component | What it is | Portable concept | Typical target |
-|---------------------|-----------|------------------|----------------|
+| --------------------- | ----------- | ------------------ | ---------------- |
 | **Skill** (`skills/x/SKILL.md`) | Model-invoked knowledge/procedure, progressively disclosed | Instruction/context injection | `AGENTS.md` / `GEMINI.md` section, `.cursor/rules/*.mdc`, `copilot-instructions.md` |
 | **Command** (`commands/x.md`) | User-invoked slash command / prompt | Reusable prompt | Codex/OpenCode custom prompt, Cursor command, Gemini TOML command, Copilot `*.prompt.md` |
 | **Agent** (`agents/x.md`) | Autonomous subagent w/ own tools/model | Named sub-agent / chat mode | OpenCode agent, Copilot custom agent; degrades to command+instructions where unsupported |

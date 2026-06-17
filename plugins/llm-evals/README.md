@@ -6,7 +6,7 @@ sets, the cheapest valid pass criteria, and regression checks on every prompt/mo
 ## What's in it
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Skill** | [`skills/designing-llm-evals/SKILL.md`](skills/designing-llm-evals/SKILL.md) | Test-set assembly, pass criteria (exact / programmatic / rubric / LLM-judge), and regression discipline. |
 | **Command** | [`commands/design-eval.md`](commands/design-eval.md) | `/design-eval [feature]` — produces a concrete eval plan. |
 | **Manifest** | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Name, version, author, license, keywords. |

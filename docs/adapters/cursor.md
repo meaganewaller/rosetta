@@ -11,7 +11,7 @@ before the others are built.
 ## Component mapping
 
 | Canonical component | Cursor target | Fidelity | What transfers / what's lost |
-|---------------------|---------------|----------|------------------------------|
+| --------------------- | --------------- | ---------- | ------------------------------ |
 | **Skill** (`skills/<n>/SKILL.md`) | `.cursor/rules/<plugin>/<n>.mdc` | **NATIVE** | Becomes an "Apply Intelligently" rule (`description` set, `alwaysApply: false`). The skill description becomes the rule's trigger, preserving on-demand/progressive-disclosure semantics. Body transfers verbatim. |
 | **Command** (`commands/<n>.md`) | `.cursor/commands/<n>.md` | **NATIVE** or **DEMOTED** | Cursor commands are plain Markdown with **no frontmatter** — the body is the prompt. NATIVE when the command is just description + body; **DEMOTED** when it uses `allowed-tools` (no Cursor equivalent) or `$1`/`$ARGUMENTS` (may not interpolate). The `description` is prepended to the body so intent isn't lost. |
 | **Agent** (`agents/<n>.md`) | `.cursor/rules/<plugin>/agent-<n>.mdc` | **DEMOTED** | Cursor has no file-based subagent primitive, so the agent's system prompt becomes an "Apply Intelligently" rule. Lost: it runs **inline** rather than as a separate subagent, plus tool scoping and any model override. |

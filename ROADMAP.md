@@ -12,7 +12,7 @@ phase has an **exit criterion** — the concrete thing that must be true to call
 These were settled at kickoff and frame everything below:
 
 | Decision | Choice |
-|----------|--------|
+| ---------- | -------- |
 | **Source of truth** | Claude Code plugin format is canonical; all other harnesses are generated targets. |
 | **Distribution** | All three channels: Git marketplace + CLI installer/adapter + web registry/site. |
 | **First doc pass** | Roadmap-first lean set (this document set). |

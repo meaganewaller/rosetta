@@ -51,7 +51,7 @@ test("zed adapter: a skill is model-invocable (no disable-model-invocation)", ()
   );
   const file = result.files.find((f) => f.path === ".agents/skills/lint/SKILL.md");
   assert.ok(file, "expected a SKILL.md");
-  assert.ok(!file!.contents.includes("disable-model-invocation"), "skills stay model-invocable");
+  assert.ok(!file?.contents.includes("disable-model-invocation"), "skills stay model-invocable");
   assert.equal(result.report.find((e) => e.component === "skill:lint")?.status, "NATIVE");
 });
 
@@ -82,8 +82,10 @@ test("zed adapter: MCP → context_servers, DEMOTED when it uses CLAUDE_PLUGIN_R
   const cfg = plain.files.find((f) => f.path === ".zed/settings.json");
   assert.ok(cfg && JSON.parse(cfg.contents).context_servers.db.command === "psql");
 
+  const command = `${process.env.CLAUDE_PLUGIN_ROOT}/bin/x`;
+
   const rooted = zedAdapter.adapt(
-    emptyPlugin({ mcp: { mcpServers: { x: { command: "${CLAUDE_PLUGIN_ROOT}/bin/x" } } } }),
+    emptyPlugin({ mcp: { mcpServers: { x: { command } } } }),
   );
   assert.equal(rooted.report.find((e) => e.kind === "mcp")?.status, "DEMOTED");
 });

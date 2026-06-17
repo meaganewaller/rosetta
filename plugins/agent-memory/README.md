@@ -6,7 +6,7 @@ relevant, and how to compact history so context stays within budget and memories
 ## What's in it
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Skill** | [`skills/agent-memory-patterns/SKILL.md`](skills/agent-memory-patterns/SKILL.md) | Persistence, scoping, relevance retrieval, compaction, freshness, and bounds. |
 | **Command** | [`commands/design-memory.md`](commands/design-memory.md) | `/design-memory [system]` — produces a concrete memory strategy. |
 | **Manifest** | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Name, version, author, license, keywords. |

@@ -52,7 +52,7 @@ export const antigravityAdapter: Adapter = {
     for (const c of plugin.commands) {
       const path = `.agents/workflows/${c.name}.md`;
       const header = c.description ? `${c.description}\n\n` : "";
-      files.push({ path, contents: header + c.body.replace(/\s*$/, "") + "\n" });
+      files.push({ path, contents: `${header + c.body.replace(/\s*$/, "")}\n` });
       const lost: string[] = [];
       if (c.allowedTools) lost.push("allowed-tools has no workflow equivalent (workflows don't scope tools)");
       if (c.argumentHint || /\$\d|\$ARGUMENTS/.test(c.body))
@@ -71,7 +71,7 @@ export const antigravityAdapter: Adapter = {
     for (const a of plugin.agents) {
       const path = `.agents/rules/agent-${a.name}.md`;
       const desc = a.description ?? `Behavior of the ${a.name} agent.`;
-      files.push({ path, contents: `${desc}\n\n` + a.body.replace(/\s*$/, "") + "\n" });
+      files.push({ path, contents: `${desc}\n\n${a.body.replace(/\s*$/, "")}\n` });
       const lost = ["runs as a model-applied rule, not a separate subagent"];
       if (a.model) lost.push(`model (${a.model}) dropped — Antigravity uses its own model ids`);
       if (a.tools) lost.push("tool list dropped — Antigravity uses its own tool names");
@@ -89,11 +89,11 @@ export const antigravityAdapter: Adapter = {
     if (plugin.mcp) {
       const path = `.gemini/antigravity/mcp_config.json`;
       const { config, usesPluginRoot } = mcpToAntigravity(plugin.mcp);
-      files.push({ path, contents: JSON.stringify(config, null, 2) + "\n" });
+      files.push({ path, contents: `${JSON.stringify(config, null, 2)}\n` });
       const note = [
         "Antigravity MCP config is global — install at ~/.gemini/antigravity/mcp_config.json, not in the project",
       ];
-      if (usesPluginRoot) note.push("${CLAUDE_PLUGIN_ROOT} does not resolve in Antigravity");
+      if (usesPluginRoot) note.push(`${process.env.CLAUDE_PLUGIN_ROOT} does not resolve in Antigravity`);
       report.push({
         component: "mcp:.mcp.json",
         kind: "mcp",

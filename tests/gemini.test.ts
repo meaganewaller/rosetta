@@ -75,8 +75,10 @@ test("gemini adapter: MCP → settings.json, DEMOTED when it uses CLAUDE_PLUGIN_
   const cfg = plain.files.find((f) => f.path === ".gemini/settings.json");
   assert.ok(cfg && JSON.parse(cfg.contents).mcpServers.db.command === "psql");
 
+  const command = `${process.env.CLAUDE_PLUGIN_ROOT}/bin/x`;
+
   const rooted = geminiAdapter.adapt(
-    emptyPlugin({ mcp: { mcpServers: { x: { command: "${CLAUDE_PLUGIN_ROOT}/x" } } } }),
+    emptyPlugin({ mcp: { mcpServers: { x: { command } } } }),
   );
   assert.equal(rooted.report.find((e) => e.kind === "mcp")?.status, "DEMOTED");
 });

@@ -1,6 +1,6 @@
 # Sorbet Inline Signature Syntax Guide
 
-Source: https://sorbet.org/docs/sigs
+Source: <https://sorbet.org/docs/sigs>
 
 ## Contents
 
@@ -39,6 +39,7 @@ Every file should have a typed sigil at the top:
 ```
 
 Levels (from least to most strict):
+
 - `ignore` - Sorbet ignores the file
 - `false` - Only syntax errors reported
 - `true` - Type errors reported, untyped code allowed
@@ -56,6 +57,7 @@ end
 ## Return Types
 
 ### returns()
+
 ```ruby
 sig { returns(String) }
 def name
@@ -64,7 +66,9 @@ end
 ```
 
 ### void
+
 For methods where only side effects matter:
+
 ```ruby
 sig { void }
 def greet(name)
@@ -75,6 +79,7 @@ end
 ## Parameter Types
 
 ### Required Parameters
+
 ```ruby
 sig { params(name: String, age: Integer).returns(String) }
 def greet(name, age)
@@ -82,6 +87,7 @@ end
 ```
 
 ### Optional Parameters
+
 ```ruby
 sig { params(name: String, greeting: String).returns(String) }
 def greet(name, greeting = "Hello")
@@ -89,6 +95,7 @@ end
 ```
 
 ### Keyword Parameters
+
 ```ruby
 sig { params(name: String, age: Integer).returns(String) }
 def greet(name:, age:)
@@ -96,6 +103,7 @@ end
 ```
 
 ### Rest Parameters (*args)
+
 ```ruby
 sig { params(args: Integer).void }
 def sum(*args)
@@ -104,6 +112,7 @@ end
 ```
 
 ### Keyword Rest Parameters (**kwargs)
+
 ```ruby
 sig { params(kwargs: String).void }
 def process(**kwargs)
@@ -112,6 +121,7 @@ end
 ```
 
 ### Block Parameters
+
 ```ruby
 sig { params(blk: T.proc.params(x: Integer).returns(String)).returns(T::Array[String]) }
 def map_numbers(&blk)
@@ -141,6 +151,7 @@ end
 ## Type Constructors
 
 ### T.nilable - Optional/Nullable
+
 ```ruby
 sig { params(name: T.nilable(String)).void }
 def greet(name)
@@ -149,6 +160,7 @@ end
 ```
 
 ### T.any - Union Types
+
 ```ruby
 sig { params(id: T.any(String, Integer)).returns(User) }
 def find(id)
@@ -156,6 +168,7 @@ end
 ```
 
 ### T.all - Intersection Types
+
 ```ruby
 sig { params(obj: T.all(Enumerable, Comparable)).void }
 def process(obj)
@@ -163,6 +176,7 @@ end
 ```
 
 ### T.untyped - Unknown Type (avoid!)
+
 ```ruby
 sig { params(data: T.untyped).returns(T.untyped) }
 def process(data)
@@ -172,6 +186,7 @@ end
 ## Collection Types
 
 ### T::Array
+
 ```ruby
 sig { returns(T::Array[String]) }
 def names
@@ -180,6 +195,7 @@ end
 ```
 
 ### T::Hash
+
 ```ruby
 sig { returns(T::Hash[Symbol, Integer]) }
 def scores
@@ -188,6 +204,7 @@ end
 ```
 
 ### T::Set
+
 ```ruby
 sig { returns(T::Set[String]) }
 def unique_names
@@ -196,6 +213,7 @@ end
 ```
 
 ### T::Range
+
 ```ruby
 sig { returns(T::Range[Integer]) }
 def valid_range
@@ -204,6 +222,7 @@ end
 ```
 
 ### T::Enumerable
+
 ```ruby
 sig { params(items: T::Enumerable[String]).void }
 def process(items)
@@ -213,6 +232,7 @@ end
 ## Type Assertions
 
 ### T.let - Declare Variable Types
+
 ```ruby
 # Instance variables
 @name = T.let("", String)
@@ -226,16 +246,19 @@ TIMEOUT = T.let(30, Integer)
 ```
 
 ### T.cast - Force Type (unsafe)
+
 ```ruby
 user = T.cast(data, User)
 ```
 
 ### T.must - Assert Non-nil
+
 ```ruby
 name = T.must(params[:name])  # raises if nil
 ```
 
 ### T.bind - Bind Self Type
+
 ```ruby
 sig { params(blk: T.proc.bind(MyClass).void).void }
 def with_context(&blk)
@@ -245,6 +268,7 @@ end
 ## Class Methods
 
 ### Style 1: def self.method
+
 ```ruby
 class User
   extend T::Sig
@@ -256,6 +280,7 @@ end
 ```
 
 ### Style 2: class << self
+
 ```ruby
 class User
   class << self
@@ -271,18 +296,21 @@ end
 ## Attributes
 
 ### attr_reader
+
 ```ruby
 sig { returns(String) }
 attr_reader :name
 ```
 
 ### attr_writer
+
 ```ruby
 sig { params(name: String).returns(String) }
 attr_writer :name
 ```
 
 ### attr_accessor
+
 ```ruby
 sig { returns(String) }
 attr_accessor :name
@@ -314,6 +342,7 @@ end
 ## Generics
 
 ### Generic Class
+
 ```ruby
 class Box
   extend T::Sig

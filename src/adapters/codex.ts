@@ -73,7 +73,7 @@ export const codexAdapter: Adapter = {
         `description = ${tomlString(a.description ?? `The ${a.name} agent.`)}`,
         `developer_instructions = ${tomlMultiline(a.body)}`,
       ];
-      files.push({ path, contents: lines.join("\n") + "\n" });
+      files.push({ path, contents: `${lines.join("\n")}\n` });
       const lost: string[] = [];
       if (a.model) lost.push(`model (${a.model}) dropped — Codex model namespace differs`);
       if (a.tools) lost.push("tool list dropped — Codex scopes via sandbox_mode / mcp_servers");
@@ -97,7 +97,7 @@ export const codexAdapter: Adapter = {
         status: usesPluginRoot ? "DEMOTED" : "NATIVE",
         target: path,
         note: usesPluginRoot
-          ? "${CLAUDE_PLUGIN_ROOT} does not resolve in Codex"
+          ? `${process.env.CLAUDE_PLUGIN_ROOT} does not resolve in Codex`
           : "merge into an existing .codex/config.toml if present",
       });
     }

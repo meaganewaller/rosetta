@@ -100,14 +100,14 @@ export const zedAdapter: Adapter = {
     if (plugin.mcp) {
       const path = `.zed/settings.json`;
       const { config, usesPluginRoot } = mcpToZed(plugin.mcp);
-      files.push({ path, contents: JSON.stringify(config, null, 2) + "\n" });
+      files.push({ path, contents: `${JSON.stringify(config, null, 2)}\n` });
       report.push({
         component: "mcp:.mcp.json",
         kind: "mcp",
         status: usesPluginRoot ? "DEMOTED" : "NATIVE",
         target: path,
         note: usesPluginRoot
-          ? "${CLAUDE_PLUGIN_ROOT} does not resolve in Zed"
+          ? `${process.env.CLAUDE_PLUGIN_ROOT} does not resolve in Zed`
           : "merge `context_servers` into an existing .zed/settings.json if present",
       });
     }

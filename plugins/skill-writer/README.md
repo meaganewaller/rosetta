@@ -7,7 +7,7 @@ highest-leverage authoring skill, since `SKILL.md` is now native across all five
 ## What's in it
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Command** | [`commands/write-skill.md`](commands/write-skill.md) | `/write-skill <name>` — drafts a trigger-quality `SKILL.md`. |
 | **Skill** | [`skills/writing-effective-skills/SKILL.md`](skills/writing-effective-skills/SKILL.md) | How to write descriptions that trigger reliably and bodies built for progressive disclosure. |
 | **Manifest** | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Name, version, author, license, keywords. |

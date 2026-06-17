@@ -18,7 +18,7 @@ to eight harnesses.
 ## By intent
 
 | I want to… | Read |
-|------------|------|
+| ------------ | ------ |
 | Understand what this is and why | [Vision](vision.md) |
 | Understand how it works under the hood | [Architecture](architecture.md) |
 | Build a plugin | [Plugin spec](plugin-spec.md) + [Contributing](../CONTRIBUTING.md) |

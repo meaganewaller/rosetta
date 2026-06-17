@@ -6,7 +6,7 @@ clauses, safe navigation, keyword args) and the manual loops and nil checks it r
 ## What's in it
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Skill** | [`skills/writing-idiomatic-ruby/SKILL.md`](skills/writing-idiomatic-ruby/SKILL.md) | Ruby idioms and the patterns they replace; pulled in when writing or reviewing Ruby. |
 | **Command** | [`commands/ruby-review.md`](commands/ruby-review.md) | `/ruby-review [file]` — reviews a file for idiomatic improvements. |
 | **Manifest** | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Name, version, author, license, keywords. |

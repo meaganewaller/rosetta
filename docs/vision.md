@@ -62,7 +62,7 @@ The instructions are portable. The packaging is mechanical. So:
 ## Who this is for
 
 | Audience | What they get |
-|----------|---------------|
+| ---------- | --------------- |
 | **Plugin authors** | Write once in a documented format, reach 6 harnesses. A lint + test harness so contributions hold a quality bar. |
 | **Consumers** | Browse a comprehensive catalog, install into *their* harness with one command, regardless of which tool they use. |
 | **Teams** | A shared, version-pinned set of agentic capabilities that works no matter which harness each engineer prefers. |

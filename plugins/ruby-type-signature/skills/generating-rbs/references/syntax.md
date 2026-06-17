@@ -188,7 +188,7 @@ Tuples are `Array` objects, fixed size and heterogeneous.
 [Symbol, Integer, Integer]        # Tuple of Symbol, Integer, and Integer like `[:pair, 30, 22]`
 ```
 
-*Empty tuple* or *1-tuple* sound strange, but RBS allows these types.
+_Empty tuple_ or _1-tuple_ sound strange, but RBS allows these types.
 
 ### Type variable
 
@@ -272,9 +272,9 @@ See the next section for details.
 
 We have contextual limitations on some types:
 
-* `void` is only allowed as a return type or a generic parameter
-* `self` is only allowed in *self-context*
-* `class` and `instance` is only allowed in *classish-context*
+- `void` is only allowed as a return type or a generic parameter
+- `self` is only allowed in _self-context_
+- `class` and `instance` is only allowed in _classish-context_
 
 These contextual limitation is introduced at RBS 3.3.
 The parser accepts those types even if it doesn't satisfy contextual limitation, but warning is reported with `rbs validate` command.
@@ -297,7 +297,7 @@ type t2 = ^() -> void?                         # void cannot be used inside an o
 type t3 = Enumerator[Integer, void | String]   # void cannot be used inside a union type
 ```
 
-#### Examples of *self-context*
+#### Examples of _self-context_
 
 The following `self` types are allowed.
 
@@ -323,7 +323,7 @@ class Foo
 end
 ```
 
-#### Examples of *classish-context*
+#### Examples of _classish-context_
 
 The following `class`/`instance` types are allowed.
 
@@ -502,9 +502,9 @@ self.@value: Hash[Symbol, Key]
 @@instances: Array[instance]
 ```
 
-* Instance variables definition is *self-context* and *classish-context*
-* Class instance variables definition is *self-context* and *classish-context*
-* Class variables definition is *classish-context*, but NOT *self-context*
+- Instance variables definition is _self-context_ and _classish-context_
+- Class instance variables definition is _self-context_ and _classish-context_
+- Class variables definition is _classish-context_, but NOT _self-context_
 
 ### Method definition
 
@@ -553,7 +553,7 @@ public def self.puts: (*untyped) -> void   # Defines public singleton method
 public def self?.puts: (*untyped) -> void  # 🚨🚨🚨 Error: `?.` has own visibility semantics (== `module_function`) 🚨🚨🚨
 ```
 
-* Method types are *self-context* and *classish-context*
+- Method types are _self-context_ and _classish-context_
 
 ### Attribute definition
 
@@ -586,7 +586,7 @@ private attr_accessor id: Integer
 private attr_reader self.name: String
 ```
 
-* Attribute types are *self-context* and *classish-context*
+- Attribute types are _self-context_ and _classish-context_
 
 ### Mixin (include), Mixin (extend), Mixin (prepend)
 
@@ -607,7 +607,7 @@ extend _LikeString
 
 This allows importing `def`s from the interface to help developer implementing a set of methods.
 
-* Mixin arguments are *classish-context*, but not *self-context*
+- Mixin arguments are _classish-context_, but not _self-context_
 
 ### Alias
 
@@ -692,7 +692,7 @@ _module-type-parameters_ ::=                                                  # 
 
 Class declaration can have type parameters and superclass. When you omit superclass, `::Object` is assumed.
 
-* Super class arguments and generic class bounds are not *classish-context* nor *self-context*
+- Super class arguments and generic class bounds are not _classish-context_ nor _self-context_
 
 ### Module declaration
 
@@ -710,7 +710,7 @@ end
 
 The `Enumerable` module above requires `each` method for enumerating objects.
 
-* Self type arguments and generic class bounds are not *classish-context* nor *self-context*
+- Self type arguments and generic class bounds are not _classish-context_ nor _self-context_
 
 ### Class/module alias declaration
 
@@ -776,7 +776,7 @@ Type alias can be generic like class, module, and interface.
 type list[out T] = [T, list[T]] | nil
 ```
 
-* Alias types are not *classish-context* nor *self-context*
+- Alias types are not _classish-context_ nor _self-context_
 
 ### Constant type declaration
 
@@ -786,7 +786,7 @@ You can declare a constant.
 Person::DefaultEmailAddress: String
 ```
 
-* Constant types are not *classish-context* nor *self-context*
+- Constant types are not _classish-context_ nor _self-context_
 
 ### Global type declaration
 
@@ -796,7 +796,7 @@ You can declare a global variable.
 $LOAD_PATH: Array[String]
 ```
 
-* Constant types are not *classish-context* nor *self-context*
+- Constant types are not _classish-context_ nor _self-context_
 
 ### Generics
 
@@ -941,8 +941,8 @@ _use-clause_ ::= _type-name_                           # Single use clause
                | _namespace_                           # Wildcard use clause
 ```
 
-The *use directive* defines relative type names that is an alias of other type names.
-We can use the simple type names if it is declared with *use*.
+The _use directive_ defines relative type names that is an alias of other type names.
+We can use the simple type names if it is declared with _use_.
 
 ```rbs
 use RBS::Namespace        # => Defines `Namespace`

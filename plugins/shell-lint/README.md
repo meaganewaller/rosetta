@@ -6,7 +6,7 @@ conventions (strict mode, quoting, cleanup traps, portability).
 ## What's in it
 
 | Component | File | What it does |
-|-----------|------|--------------|
+| ----------- | ------ | -------------- |
 | **Command** | [`commands/shell-lint.md`](commands/shell-lint.md) | `/shell-lint [file]` — runs shellcheck on a script and applies fixes. |
 | **Skill** | [`skills/writing-robust-bash/SKILL.md`](skills/writing-robust-bash/SKILL.md) | Strict mode, quoting, traps, safe patterns, and bash-vs-POSIX portability. |
 | **Manifest** | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Name, version, author, license, keywords. |

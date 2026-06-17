@@ -12,7 +12,7 @@ native project files. OpenCode is the closest model to Claude Code, so this is t
 ## Component mapping
 
 | Canonical component | OpenCode target | Fidelity | What transfers / what's lost |
-|---------------------|-----------------|----------|------------------------------|
+| --------------------- | ----------------- | ---------- | ------------------------------ |
 | **Skill** (`skills/<n>/SKILL.md`) | `.opencode/skills/<n>/SKILL.md` | **NATIVE** | OpenCode skills use the same `SKILL.md` format. 1:1 relocation. (OpenCode even reads `.claude/skills/` and `.agents/skills/` directly.) |
 | **Command** (`commands/<n>.md`) | `.opencode/commands/<n>.md` | **NATIVE** or **DEMOTED** | `description` transfers; the body keeps **both** `$ARGUMENTS` and positional `$1..$9` (OpenCode interpolates them, unlike Cursor/Codex). **DEMOTED** only if `allowed-tools` is set — there's no command-level tool field (tool access is set on the agent a command runs as). |
 | **Agent** (`agents/<n>.md`) | `.opencode/agents/<n>.md` (`mode: subagent`) | **NATIVE** or **DEMOTED** | The subagent concept is preserved (`mode: subagent`). **DEMOTED** when the source sets `model` (OpenCode uses `provider/model` ids) or `tools` (OpenCode scopes via the agent `permission` object). |

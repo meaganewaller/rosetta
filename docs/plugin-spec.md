@@ -45,7 +45,7 @@ presence on disk is the registration.
 ```
 
 | Field | Required | Notes |
-|-------|----------|-------|
+| ------- | ---------- | ------- |
 | `name` | ✅ | kebab-case, unique within the catalog. Becomes the install identifier. |
 | `description` | ✅ | One sentence. Shown in catalog listings and search. |
 | `version` | ✅ (catalog) | SemVer. See [versioning](#versioning). |

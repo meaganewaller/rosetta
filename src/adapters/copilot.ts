@@ -14,8 +14,8 @@ import type { Adapter, AdapterResult, CanonicalPlugin, OutputFile, ReportEntry }
 import { skillMd, yamlScalar } from "../util.ts";
 
 function mdDoc(fields: string[], body: string): string {
-  const fm = fields.length ? ["---", ...fields, "---"].join("\n") + "\n\n" : "";
-  return fm + body.replace(/\s*$/, "") + "\n";
+  const fm = fields.length ? `${["---", ...fields, "---"].join("\n")}\n\n` : "";
+  return `${fm + body.replace(/\s*$/, "")}\n`;
 }
 
 function mcpToVscode(mcp: unknown): { config: unknown; usesPluginRoot: boolean } {
@@ -58,7 +58,7 @@ export const copilotAdapter: Adapter = {
       files.push({ path, contents: mdDoc(fields, c.body) });
       const lost: string[] = [];
       if (/\$\d|\$ARGUMENTS/.test(c.body))
-        lost.push("Copilot prompt files use ${input:…} variables, not $1/$ARGUMENTS");
+        lost.push(`Copilot prompt files use \`${process.env.CLAUDE_PLUGIN_ROOT}/bin/x\` variables, not $1/$ARGUMENTS`);
       if (c.allowedTools) lost.push("allowed-tools not mapped — Copilot uses its own tool names");
       report.push({
         component: `command:${c.name}`,
@@ -91,14 +91,14 @@ export const copilotAdapter: Adapter = {
     if (plugin.mcp) {
       const path = `.vscode/mcp.json`;
       const { config, usesPluginRoot } = mcpToVscode(plugin.mcp);
-      files.push({ path, contents: JSON.stringify(config, null, 2) + "\n" });
+      files.push({ path, contents: `${JSON.stringify(config, null, 2)}\n` });
       report.push({
         component: "mcp:.mcp.json",
         kind: "mcp",
         status: usesPluginRoot ? "DEMOTED" : "NATIVE",
         target: path,
         note: usesPluginRoot
-          ? "${CLAUDE_PLUGIN_ROOT} does not resolve in Copilot/VS Code"
+          ? `${process.env.CLAUDE_PLUGIN_ROOT} does not resolve in Copilot/VS Code`
           : "merge `servers` into an existing .vscode/mcp.json if present",
       });
     }

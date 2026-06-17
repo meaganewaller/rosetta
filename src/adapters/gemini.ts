@@ -33,7 +33,7 @@ export const geminiAdapter: Adapter = {
       const lines: string[] = [];
       if (c.description) lines.push(`description = ${tomlString(c.description)}`);
       lines.push(`prompt = ${tomlMultiline(prompt)}`);
-      files.push({ path, contents: lines.join("\n") + "\n" });
+      files.push({ path, contents: `${lines.join("\n")}\n` });
       const lost: string[] = [];
       if (/\$\d/.test(c.body)) lost.push("positional args ($1..$9) — Gemini injects all args via {{args}}");
       if (c.allowedTools) lost.push("allowed-tools has no Gemini command equivalent");
@@ -52,7 +52,7 @@ export const geminiAdapter: Adapter = {
       const fmLines = ["---", `name: ${yamlScalar(a.name)}`];
       if (a.description) fmLines.push(`description: ${yamlScalar(a.description)}`);
       fmLines.push("---");
-      files.push({ path, contents: fmLines.join("\n") + "\n\n" + a.body.replace(/\s*$/, "") + "\n" });
+      files.push({ path, contents: `${fmLines.join("\n")}\n\n${a.body.replace(/\s*$/, "")}\n` });
       const lost: string[] = [];
       if (a.model) lost.push(`model (${a.model}) dropped — Gemini uses its own model ids`);
       if (a.tools) lost.push("tool list dropped — Gemini uses its own tool names");
@@ -69,7 +69,7 @@ export const geminiAdapter: Adapter = {
     if (plugin.mcp) {
       const path = `.gemini/settings.json`;
       const servers = (plugin.mcp as { mcpServers?: unknown }).mcpServers ?? plugin.mcp;
-      files.push({ path, contents: JSON.stringify({ mcpServers: servers }, null, 2) + "\n" });
+      files.push({ path, contents: `${JSON.stringify({ mcpServers: servers }, null, 2)}\n` });
       const usesPluginRoot = JSON.stringify(plugin.mcp).includes("CLAUDE_PLUGIN_ROOT");
       report.push({
         component: "mcp:.mcp.json",
@@ -77,7 +77,7 @@ export const geminiAdapter: Adapter = {
         status: usesPluginRoot ? "DEMOTED" : "NATIVE",
         target: path,
         note: usesPluginRoot
-          ? "${CLAUDE_PLUGIN_ROOT} does not resolve in Gemini CLI"
+          ? `${process.env.CLAUDE_PLUGIN_ROOT} does not resolve in Gemini CLI`
           : "merge `mcpServers` into an existing .gemini/settings.json if present",
       });
     }

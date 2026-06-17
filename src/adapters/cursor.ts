@@ -22,7 +22,7 @@ function mdcRule(description: string, body: string): string {
   const fm = ["---", `description: ${yamlScalar(description)}`, "alwaysApply: false", "---", ""].join(
     "\n",
   );
-  return fm + body.replace(/\s*$/, "") + "\n";
+  return `${fm + body.replace(/\s*$/, "")}\n`;
 }
 
 export const cursorAdapter: Adapter = {
@@ -43,7 +43,7 @@ export const cursorAdapter: Adapter = {
     for (const c of plugin.commands) {
       const path = `.cursor/commands/${c.name}.md`;
       const header = c.description ? `${c.description}\n\n` : "";
-      files.push({ path, contents: header + c.body.replace(/\s*$/, "") + "\n" });
+      files.push({ path, contents: `${header + c.body.replace(/\s*$/, "")}\n` });
       const lost: string[] = [];
       if (c.allowedTools) lost.push("allowed-tools has no Cursor equivalent");
       if (c.argumentHint || /\$\d|\$ARGUMENTS/.test(c.body))
@@ -77,7 +77,7 @@ export const cursorAdapter: Adapter = {
     // MCP → .cursor/mcp.json (same schema). ${CLAUDE_PLUGIN_ROOT} won't resolve in Cursor.
     if (plugin.mcp) {
       const path = `.cursor/mcp.json`;
-      files.push({ path, contents: JSON.stringify(plugin.mcp, null, 2) + "\n" });
+      files.push({ path, contents: `${JSON.stringify(plugin.mcp, null, 2)}\n` });
       const usesPluginRoot = JSON.stringify(plugin.mcp).includes("CLAUDE_PLUGIN_ROOT");
       report.push({
         component: "mcp:.mcp.json",
@@ -85,7 +85,7 @@ export const cursorAdapter: Adapter = {
         status: usesPluginRoot ? "DEMOTED" : "NATIVE",
         target: path,
         note: usesPluginRoot
-          ? "${CLAUDE_PLUGIN_ROOT} does not resolve in Cursor; use ${workspaceFolder}"
+          ? `${process.env.CLAUDE_PLUGIN_ROOT} does not resolve in Cursor; use ${workspaceFolder}`
           : undefined,
       });
     }

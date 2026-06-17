@@ -12,7 +12,7 @@ than expected, because Copilot has adopted the Agent Skills open standard.
 ## Component mapping
 
 | Canonical component | Copilot target | Fidelity | What transfers / what's lost |
-|---------------------|----------------|----------|------------------------------|
+| --------------------- | ---------------- | ---------- | ------------------------------ |
 | **Skill** (`skills/<n>/SKILL.md`) | `.github/skills/<n>/SKILL.md` | **NATIVE** | Copilot Agent Skills use the same `SKILL.md` (the open standard; also reads `.claude/skills/` and `.agents/skills/`). |
 | **Command** (`commands/<n>.md`) | `.github/prompts/<n>.prompt.md` | **NATIVE** or **DEMOTED** | Slash-invoked prompt file with `description` + `mode: agent`. **DEMOTED** when the body uses `$1`/`$ARGUMENTS` (Copilot uses `${input:…}` variables) or `allowed-tools` (Copilot has its own tool names). |
 | **Agent** (`agents/<n>.md`) | `.github/agents/<n>.agent.md` | **NATIVE** or **DEMOTED** | Copilot custom agents (formerly chat modes) are personas with their own instructions. **DEMOTED** when the source sets `model` or `tools` (Copilot has its own ids/names). |

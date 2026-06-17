@@ -66,8 +66,10 @@ test("copilot adapter: MCP → .vscode/mcp.json with `servers` key (not mcpServe
   assert.ok(parsed.servers && !parsed.mcpServers, "root key must be `servers`");
   assert.equal(parsed.servers.db.type, "stdio");
 
+  const command = `${process.env.CLAUDE_PLUGIN_ROOT}/bin/x`;
+
   const rooted = copilotAdapter.adapt(
-    emptyPlugin({ mcp: { mcpServers: { x: { command: "${CLAUDE_PLUGIN_ROOT}/x" } } } }),
+    emptyPlugin({ mcp: { mcpServers: { x: { command } } } }),
   );
   assert.equal(rooted.report.find((e) => e.kind === "mcp")?.status, "DEMOTED");
 });

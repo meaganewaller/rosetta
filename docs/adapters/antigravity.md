@@ -13,7 +13,7 @@ Its standout trait among the adapters: a Claude **command** lands in a real slas
 ## Component mapping
 
 | Canonical component | Antigravity target | Fidelity | What transfers / what's lost |
-|---------------------|--------------------|----------|------------------------------|
+| --------------------- | -------------------- | ---------- | ------------------------------ |
 | **Skill** (`skills/<n>/SKILL.md`) | `.agents/skills/<n>/SKILL.md` | **NATIVE** | Antigravity skills use the **same `SKILL.md` format** (`name` + `description` frontmatter + body) under the `.agents/` standard. 1:1 relocation. |
 | **Command** (`commands/<n>.md`) | `.agents/workflows/<n>.md` | **NATIVE** or **DEMOTED** | Workflows are saved prompts invoked as slash commands (`/n`), so the slash-command concept is **kept**. **DEMOTED** only when the source sets `allowed-tools` (workflows don't scope tools) or uses `$1`/`$ARGUMENTS` (not interpolated in workflows). |
 | **Agent** (`agents/<n>.md`) | `.agents/rules/agent-<n>.md` | **DEMOTED** | Antigravity has **no per-file subagent** primitive (personas live in `AGENTS.md` + `.agents/rules/`). The agent body becomes a model-applied rule, not a separate subagent; `model` and `tools` are dropped. |
@@ -54,7 +54,7 @@ Output is locked under [`tests/golden/antigravity/changelog/`](../../tests/golde
 ## Verified facts (June 2026)
 
 - **Skills** — `.agents/skills/<name>/SKILL.md` with `name` (optional; defaults to the directory)
-  + `description` (required, the trigger phrase) frontmatter, plus optional `scripts/`,
+  - `description` (required, the trigger phrase) frontmatter, plus optional `scripts/`,
   `examples/`, `resources/` assets. Backward-compatible with `.agent/skills/`.
 - **Workflows** — `.agents/workflows/<name>.md`: saved prompts invoked in the Agent panel with a
   forward slash (`/deploy`, `/qa-check`).

@@ -11,7 +11,7 @@ the identifier. Each entry lists its scope and a few illustrative plugin ideas t
 ## Core engineering
 
 | Category | Scope | Example plugin ideas |
-|----------|-------|---------------------|
+| ---------- | ------- | --------------------- |
 | **Development** | Day-to-day coding loops, scaffolding, refactoring assists | scaffold-feature, refactor-extract, dead-code-finder |
 | **Documentation** | Authoring & maintaining docs | changelog, adr-writer, api-docs-from-source, readme-generator |
 | **Workflows** | Multi-step orchestration & process | pr-review-flow, release-train, incident-runbook |
@@ -22,7 +22,7 @@ the identifier. Each entry lists its scope and a few illustrative plugin ideas t
 ## Data & intelligence
 
 | Category | Scope | Example plugin ideas |
-|----------|-------|---------------------|
+| ---------- | ------- | --------------------- |
 | **AI & ML** | Model integration, prompting, eval | prompt-linter, eval-harness, rag-builder |
 | **Memory** | Persistent context, knowledge capture | decision-journal, context-saver |
 | **Data** | Data wrangling, pipelines, formats | csv-tools, schema-inference, etl-scaffold |
@@ -31,7 +31,7 @@ the identifier. Each entry lists its scope and a few illustrative plugin ideas t
 ## Platform & operations
 
 | Category | Scope | Example plugin ideas |
-|----------|-------|---------------------|
+| ---------- | ------- | --------------------- |
 | **Operations** | Day-2 ops, runbooks, on-call | runbook-author, oncall-summarizer |
 | **Performance** | Profiling, benchmarking, optimization | benchmark-harness, hotpath-finder |
 | **Infrastructure** | IaC, provisioning, containers | terraform-helper, dockerfile-optimizer, k8s-manifest |
@@ -43,7 +43,7 @@ the identifier. Each entry lists its scope and a few illustrative plugin ideas t
 ## Domain & business
 
 | Category | Scope | Example plugin ideas |
-|----------|-------|---------------------|
+| ---------- | ------- | --------------------- |
 | **Marketing** | Content, SEO, growth ops | seo-auditor, landing-copy, campaign-brief |
 | **Business** | Ops, analytics, internal tooling | metrics-dashboard, ops-automation |
 | **Finance** | Accounting, modeling, reporting | financial-model, invoice-parser, ledger-checks |
@@ -58,7 +58,7 @@ A meta-family: language- and runtime-specific plugins. Each language is its own 
 consumers can filter to their stack. Seed list (extensible):
 
 | Category | Scope | Example plugin ideas |
-|----------|-------|---------------------|
+| ---------- | ------- | --------------------- |
 | **Python** | Idioms, typing, packaging, async | type-hint-adder, pytest-setup, fastapi-endpoint |
 | **Ruby** | Ruby & Rails idioms, testing | rails-model, rspec-setup, n+1-finder |
 | **JavaScript** | Modern JS, tooling, runtime | esm-migrator, eslint-setup |

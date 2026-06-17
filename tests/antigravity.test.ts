@@ -72,12 +72,14 @@ test("antigravity adapter: MCP → mcp_config.json, DEMOTED (global), remote use
   assert.equal(entry?.status, "DEMOTED"); // Antigravity MCP config is global, never project-scoped
   const cfg = remote.files.find((f) => f.path === ".gemini/antigravity/mcp_config.json");
   assert.ok(cfg, "expected mcp_config.json");
-  const parsed = JSON.parse(cfg!.contents);
+  const parsed = JSON.parse(cfg?.contents);
   assert.equal(parsed.mcpServers.api.serverUrl, "https://example.com/mcp"); // url → serverUrl
   assert.ok(!("url" in parsed.mcpServers.api), "remote `url` should become `serverUrl`");
 
+  const command = `${process.env.CLAUDE_PLUGIN_ROOT}/bin/x`;
+
   const rooted = antigravityAdapter.adapt(
-    emptyPlugin({ mcp: { mcpServers: { x: { command: "${CLAUDE_PLUGIN_ROOT}/x" } } } }),
+    emptyPlugin({ mcp: { mcpServers: { x: { command } } } }),
   );
   assert.match(rooted.report.find((e) => e.kind === "mcp")?.note ?? "", /CLAUDE_PLUGIN_ROOT/);
 });
