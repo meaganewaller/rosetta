@@ -1,0 +1,26 @@
+{
+  "name": "@rosetta/content",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "rules",
+    "skills",
+    "agents",
+    "commands",
+    "hooks"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@rosetta/core": "workspace:*"
+  }
+}
