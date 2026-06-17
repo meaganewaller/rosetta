@@ -1,61 +1,15 @@
 {
   "name": "rosetta",
-  "version": "0.1.0",
-  "type": "module",
-  "description": "Tooling for the rosetta agentic plugin marketplace: the catalog validator and the harness adapters + CLI.",
-  "keywords": [
-    "claude-code",
-    "agentic",
-    "plugin",
-    "marketplace",
-    "catalog",
-    "validator",
-    "adapters",
-    "cli",
-    "rosetta",
-    "zed",
-    "cursor",
-    "codex",
-    "opencode",
-    "gemini",
-    "copilot",
-    "antigravity"
-  ],
-  "author": {
-    "name": "Meagan Waller",
-    "url": "https://github.com/meaganewaller"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/meaganewaller/rosetta.git"
-  },
-  "homepage": "https://github.com/meaganewaller/rosetta#readme",
-  "bugs": {
-    "url": "https://github.com/meaganewaller/rosetta/issues"
-  },
-  "bin": {
-    "rosetta": "src/cli.ts"
-  },
-  "engines": {
-    "node": ">=22.18"
-  },
+  "private": true,
   "scripts": {
-    "lint": "biome check . && markdownlint '**/*.md' --ignore node_modules",
-    "lint:fix": "biome lint --write . && markdownlint '**/*.md' --ignore node_modules --fix",
-    "validate": "node scripts/validate.ts",
-    "coverage": "node scripts/coverage.ts",
-    "cli": "node src/cli.ts",
-    "test": "node --test",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "yaml": "^2.5.0"
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.0",
-    "@types/node": "^22.0.0",
-    "markdownlint-cli": "^0.49.0",
-    "typescript": "^5.8.0"
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0",
+    "@types/node": "^22.0.0"
   }
 }
