@@ -1,5 +1,6 @@
 [tools]
 node = "24"
+pnpm = "latest"
 
 [tasks.validate]
 description = "Validate the catalog against the plugin spec"
