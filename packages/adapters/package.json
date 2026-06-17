@@ -1,0 +1,43 @@
+{
+  "name": "@rosetta/adapters",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./claude-code": {
+      "import": "./dist/harnesses/claude-code.js",
+      "types": "./dist/harnesses/claude-code.d.ts"
+    },
+    "./cursor": {
+      "import": "./dist/harnesses/cursor.js",
+      "types": "./dist/harnesses/cursor.d.ts"
+    },
+    "./codex": {
+      "import": "./dist/harnesses/codex.js",
+      "types": "./dist/harnesses/codex.d.ts"
+    },
+    "./gemini": {
+      "import": "./dist/harnesses/gemini.js",
+      "types": "./dist/harnesses/gemini.d.ts"
+    },
+    "./antigravity": {
+      "import": "./dist/harnesses/antigravity.js",
+      "types": "./dist/harnesses/antigravity.d.ts"
+    },
+    "./zed": {
+      "import": "./dist/harnesses/zed.js",
+      "types": "./dist/harnesses/zed.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@rosetta/core": "workspace:*"
+  }
+}
