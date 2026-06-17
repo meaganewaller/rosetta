@@ -1,9 +1,0 @@
-{
-  "name": "llm-evals",
-  "description": "Design evals for LLM features — representative test sets, pass criteria, and regression checks so you know when output is good.",
-  "version": "0.1.0",
-  "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/llm-evals",
-  "license": "MIT",
-  "keywords": ["evals", "llm", "ai", "testing", "quality"]
-}

@@ -1,9 +1,0 @@
-{
-  "name": "agent-memory",
-  "description": "Design what an agent remembers — what to persist, how to retrieve it, and how to compact context so it stays within budget.",
-  "version": "0.1.0",
-  "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/agent-memory",
-  "license": "MIT",
-  "keywords": ["memory", "agent", "context", "llm", "ai"]
-}

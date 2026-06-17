@@ -1,9 +1,0 @@
-{
-  "name": "plugin-scaffold",
-  "description": "Scaffold a spec-compliant catalog plugin — manifest, README, and component stubs in the canonical Claude Code format.",
-  "version": "0.1.0",
-  "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/plugin-scaffold",
-  "license": "MIT",
-  "keywords": ["plugin", "scaffold", "authoring", "marketplace", "development"]
-}

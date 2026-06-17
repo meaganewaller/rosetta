@@ -1,9 +1,0 @@
-{
-  "name": "skill-writer",
-  "description": "Write trigger-quality SKILL.md files — descriptions that reliably fire and bodies built for progressive disclosure.",
-  "version": "0.1.0",
-  "author": { "name": "Meagan Waller" },
-  "homepage": "https://github.com/meaganewaller/rosetta/tree/main/plugins/skill-writer",
-  "license": "MIT",
-  "keywords": ["skill", "authoring", "documentation", "prompt", "skill-md"]
-}
